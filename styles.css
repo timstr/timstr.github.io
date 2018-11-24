@@ -1,0 +1,20 @@
+.mainbody {
+    font: 15px #060025;
+}
+
+.mainheader {
+    background: linear-gradient(#dddddd, #ffffff);
+    min-height: 100px;
+}
+
+.faceicon {
+    text-align: center;
+}
+
+.faceicon-img {
+    border: 3px solid #302e3f;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0px 5px 10px #06002563;
+}
