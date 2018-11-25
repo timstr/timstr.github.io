@@ -6,6 +6,9 @@ export interface SoundCloudPlayerProps {
     readonly height: number;
 }
 
+/**
+ * Wraps an embedded SoundCloud song player
+ */
 export const SoundCloudPlayer = (props: SoundCloudPlayerProps) => (
     <iframe
         className="soundcloudplayer"

@@ -26,7 +26,11 @@ export const Songs = () => (
         ))}
         <div>
             More songs at{" "}
-            <a href="https://soundcloud.com/timstraubinger">
+            <a
+                href="https://soundcloud.com/timstraubinger"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 soundcloud.com/timstraubinger
             </a>
         </div>

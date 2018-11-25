@@ -1,26 +1,68 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+body {
+    display: table;
+    margin: 0;
+    overflow: hidden;
+    font: 15px solid black;
+    font-family: sans-serif;
+}
+
+.backdrop {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#444466, #222233);
+    z-index: -1;
+}
+
+.maincontainer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+}
+
 .mainbody {
     text-align: center;
     font: 15px #060025;
+    margin: 0px 50px 25px 50px;
+    padding: 0px;
+    width: calc(100% - 100px);
 }
 
 .mainheader {
-    background: linear-gradient(#dddddd, #ffffff);
-    min-height: 100px;
+    min-height: 30px;
+    margin: 0px;
 }
 
 .faceicon {
     text-align: center;
+    margin: 10px;
 }
 
 .faceicon-img {
     border: 3px solid #302e3f;
-    border-radius: 50px;
+    border-radius: 53px;
     width: 100px;
     height: 100px;
     box-shadow: 0px 5px 10px #06002563;
 }
 
+.tabmenu {
+    border-radius: 10px;
+    background: #ffffff;
+}
+
 .tabmenu-list {
+    border-radius: 10px 10px 0px 0px;
     background: #7165af;
     overflow: hidden;
 }
@@ -43,14 +85,15 @@
 .tabmenuitem-active {
     background: #ffffff;
     box-shadow: #060025 0px 0px 10px;
+    text-decoration: underline;
 }
 .tabmenuitem-title {
     font-weight: bold;
-    text-decoration: underline;
 }
 
 .tab-content {
     margin-top: 10px;
+    padding: 10px;
 }
 
 .soundcloudplayer {
@@ -59,4 +102,12 @@
 
 .youtubeplayer {
     margin: 5px;
+}
+
+.pieceicon {
+    display: inline-block;
+    margin: 5px;
+}
+.pieceicon-img {
+    cursor: pointer;
 }

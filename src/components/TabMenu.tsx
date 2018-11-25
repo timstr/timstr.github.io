@@ -38,7 +38,7 @@ export class TabMenu extends React.Component<TabMenuProps, TabMenuState> {
         }
         this.state = {
             title: currentTab.title,
-            content: currentTab.render()
+            content: currentTab.render(),
         };
     }
 
@@ -53,7 +53,7 @@ export class TabMenu extends React.Component<TabMenuProps, TabMenuState> {
 
     render() {
         return (
-            <>
+            <div className="tabmenu">
                 <div className="tabmenu-list">
                     {this.props.tabs.map(t => (
                         <TabItem
@@ -67,7 +67,7 @@ export class TabMenu extends React.Component<TabMenuProps, TabMenuState> {
                 <div className="tab-content">
                     {this.state.content || "Please select a tab"}
                 </div>
-            </>
+            </div>
         );
     }
 }
