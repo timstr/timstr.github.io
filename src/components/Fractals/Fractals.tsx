@@ -1,5 +1,14 @@
 import * as React from "react";
-import { LazyImage } from "./Common/LazyImage";
+import { LazyImage } from "../Common/LazyImage";
+
+/**
+ * TODO:
+ *  - explanation
+ *  - organize by topic
+ *  - talk about software used
+ *  - screenshots
+ *  - include gifs
+ */
 
 const Pictures = [
     "algae",
@@ -55,7 +64,7 @@ const ImageIcon = (props: { image: string }) => (
     </div>
 );
 
-export const ImageList = () => (
+export const Fractals = () => (
     <>
         <div className="fractals">
             {Pictures.map(img => (

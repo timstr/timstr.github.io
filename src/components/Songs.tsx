@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SoundCloudPlayer } from "./SoundCloudPlayer";
+import { SoundCloudPlayer } from "./Common/SoundCloudPlayer";
 
 const PlayList = [
     "362396984", // Black sands exerpt

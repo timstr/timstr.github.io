@@ -1,11 +1,14 @@
 import * as React from "react";
 import { FaceIcon } from "./FaceIcon";
-import { TabMenu } from "./TabMenu";
-import { Songs } from "./Songs";
-import { Videos } from "./Videos";
-import { ImageList } from "./ImageList";
-import { CoolGifs } from "./CoolGifs";
+import { TabMenu } from "./Common/TabMenu";
 import { Color } from "../interfaces/Color";
+import { AboutMe } from "./AboutMe/AboutMe";
+import { CurriculumVitae } from "./CurriculumVitae/CurriculumVitae";
+import { Flosion } from "./Flosion/Flosion";
+import { Fractals } from "./Fractals/Fractals";
+import { RigidBodyDynamics } from "./RigidBodyDynamics/RigidBodyDynamics";
+import { CellularAutomata } from "./CellularAutomata/CellularAutomata";
+import { OtherProjects } from "./OtherProjects/OtherProjects";
 
 export const Main = () => (
     <>
@@ -18,31 +21,42 @@ export const Main = () => (
                     tabColor={new Color("#c2bed8")}
                     contentColor={new Color("#ffffff")}
                     backgroundColor={new Color("#7165af")}
-                    tabs={[
+                >
+                    {gotoTab => [
                         {
                             title: "About Me",
                             render: () => (
-                                <h1 style={{ minHeight: "200px" }}>I am Tim</h1>
+                                <AboutMe
+                                    gotoCV={() => gotoTab("Curriculum Vitae")}
+                                />
                             ),
                         },
                         {
-                            title: "A Cool Video",
-                            render: () => <Videos />,
+                            title: "Curriculum Vitae",
+                            render: () => <CurriculumVitae />,
                         },
                         {
-                            title: "Some Neat Songs",
-                            render: () => <Songs />,
+                            title: "Flosion",
+                            render: () => <Flosion />,
                         },
                         {
-                            title: "Pictures I Done",
-                            render: () => <ImageList />,
+                            title: "Fractals",
+                            render: () => <Fractals />,
                         },
                         {
-                            title: "Cool Gifs",
-                            render: () => <CoolGifs />,
+                            title: "Rigid Body Dynamics",
+                            render: () => <RigidBodyDynamics />,
+                        },
+                        {
+                            title: "Cellular Automata",
+                            render: () => <CellularAutomata />,
+                        },
+                        {
+                            title: "Other Projects",
+                            render: () => <OtherProjects />,
                         },
                     ]}
-                />
+                </TabMenu>
             </div>
         </div>
     </>

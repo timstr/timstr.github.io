@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Color } from "../interfaces/Color";
+import { Color } from "../../interfaces/Color";
 
 interface TabItemProps {
     readonly color: Color;
@@ -65,29 +65,37 @@ export interface TabMenuProps {
     readonly tabColor: Color;
     readonly contentColor: Color;
     readonly backgroundColor: Color;
-    readonly tabs: ReadonlyArray<TabProps>;
+    readonly children: (
+        gotoTab: (tab: string) => void
+    ) => ReadonlyArray<TabProps>;
 }
 
 interface TabMenuState {
     readonly title: string | null;
     readonly content: React.ReactNode | null;
+    readonly tabs: ReadonlyArray<TabProps>;
 }
 
+// TODO: tabs disappear when screen is too narrow
+// consider putting overflowing tabs on secondary rows
+// might needs refs and component lifetime functions
 export class TabMenu extends React.Component<TabMenuProps, TabMenuState> {
     constructor(props: TabMenuProps) {
         super(props);
         let currentTab: TabProps | null = null;
-        if (props.tabs.length > 0) {
-            currentTab = props.tabs[0];
+        let tabs = props.children(this.onSelectTab);
+        if (tabs.length > 0) {
+            currentTab = tabs[0];
         }
         this.state = {
             title: currentTab.title,
             content: currentTab.render(),
+            tabs,
         };
     }
 
     private onSelectTab = (tab: string) => {
-        const theTab = this.props.tabs.find(t => t.title === tab);
+        const theTab = this.state.tabs.find(t => t.title === tab);
         if (theTab === undefined) {
             this.setState({ title: null, content: null });
         } else {
@@ -108,7 +116,7 @@ export class TabMenu extends React.Component<TabMenuProps, TabMenuState> {
                 }}
             >
                 <div className="tabmenu-list">
-                    {this.props.tabs.map(t => (
+                    {this.state.tabs.map(t => (
                         <TabItem
                             key={t.title}
                             active={t.title === this.state.title}

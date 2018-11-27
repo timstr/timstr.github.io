@@ -1,7 +1,9 @@
 import * as React from "react";
-import { TabMenu } from "./TabMenu";
+import { TabMenu } from "./Common/TabMenu";
 import { Color } from "../interfaces/Color";
-import { LazyImage } from "./LazyImage";
+import { LazyImage } from "./Common/LazyImage";
+
+// TODO: repurpose this code for the fractals page
 
 const GifList = ["flying", "gooflow", "fovsilliness", "orbit"];
 
@@ -21,9 +23,12 @@ export const CoolGifs = () => (
         tabColor={new Color("#DDDD22")}
         contentColor={new Color("#FFFF66")}
         backgroundColor={new Color("#FFFFFF")}
-        tabs={GifList.map((name, index) => ({
-            title: `Cool gif #${index + 1}`,
-            render: () => <GifImage image={name} />,
-        }))}
-    />
+    >
+        {() =>
+            GifList.map((name, index) => ({
+                title: `Cool gif #${index + 1}`,
+                render: () => <GifImage image={name} />,
+            }))
+        }
+    </TabMenu>
 );
