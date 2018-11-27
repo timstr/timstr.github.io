@@ -1,6 +1,7 @@
 import * as React from "react";
 import { TabMenu } from "./TabMenu";
 import { Color } from "../interfaces/Color";
+import { LazyImage } from "./LazyImage";
 
 const GifList = ["flying", "gooflow", "fovsilliness", "orbit"];
 
@@ -9,8 +10,9 @@ const GifImage = (props: { image: string }) => (
         href={`img/${props.image}.gif`}
         target="_blank"
         rel="noopener noreferrer"
+        key={props.image}
     >
-        <img className="coolgif" src={`img/${props.image}.gif`} />
+        <LazyImage className="coolgif" src={`img/${props.image}.gif`} />
     </a>
 );
 

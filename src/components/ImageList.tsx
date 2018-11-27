@@ -1,4 +1,5 @@
 import * as React from "react";
+import { LazyImage } from "./LazyImage";
 
 const Pictures = [
     "algae",
@@ -46,7 +47,7 @@ const ImageIcon = (props: { image: string }) => (
             target="_blank"
             rel="noopener noreferrer"
         >
-            <img
+            <LazyImage
                 className="pieceicon-img"
                 src={`img/${props.image}_small.png`}
             />
