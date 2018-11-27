@@ -58,42 +58,52 @@ body {
 
 .tabmenu {
     border-radius: 10px;
-    background: #ffffff;
 }
 
 .tabmenu-list {
     border-radius: 10px 10px 0px 0px;
-    background: #7165af;
     overflow: hidden;
+    height: 35px;
+    vertical-align: baseline;
 }
 .tabmenuitem,
 .tabmenuitem-active {
+    margin-left: 5px;
+    margin-right: 5px;
     margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
     margin-bottom: -5px;
     padding: 5px;
     display: inline-block;
-    background: #c2bed8;
     border-radius: 10px 10px 0px 0px;
     text-align: center;
     min-width: 100px;
-    min-height: 20px;
     box-shadow: #060025 0px 0px 5px;
     cursor: pointer;
 }
-.tabmenuitem-active {
-    background: #ffffff;
+.tabmenuitem {
+    position: relative;
+    height: 20px;
+    top: 0px;
+    transition: box-shadow 0.25s, background-color 0.25s, height 0.25s,
+        top 0.25s;
+}
+.tabmenuitem:hover {
+    top: -5px;
+    height: 25px;
     box-shadow: #060025 0px 0px 10px;
-    text-decoration: underline;
+}
+.tabmenuitem-active {
+    position: relative;
+    box-shadow: #060025 0px 0px 10px;
+    height: 25px;
+    top: -5px;
 }
 .tabmenuitem-title {
     font-weight: bold;
 }
 
 .tab-content {
-    margin-top: 10px;
-    padding: 10px;
+    padding-top: 5px;
 }
 
 .soundcloudplayer {
@@ -126,4 +136,9 @@ body {
     height: 200px;
     box-shadow: 0px 5px 20px #888888;
     border-radius: 0px;
+}
+
+.coolgif {
+    margin: 10px;
+    box-shadow: #222233 0px 5px 10px;
 }
