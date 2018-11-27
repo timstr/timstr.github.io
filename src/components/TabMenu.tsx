@@ -1,19 +1,60 @@
 import * as React from "react";
+import { Color } from "../interfaces/Color";
 
 interface TabItemProps {
+    readonly color: Color;
+    readonly hoverColor?: Color;
+    readonly activeColor?: Color;
     readonly active: boolean;
     readonly title: string;
     onClick(): void;
 }
 
-const TabItem = (props: TabItemProps) => (
-    <div
-        className={props.active ? "tabmenuitem-active" : "tabmenuitem"}
-        onClick={props.onClick}
-    >
-        <span className="tabmenuitem-title">{props.title}</span>
-    </div>
-);
+interface TabItemState {
+    readonly hover: boolean;
+}
+
+class TabItem extends React.Component<TabItemProps, TabItemState> {
+    constructor(props: TabItemProps) {
+        super(props);
+        this.state = {
+            hover: false,
+        };
+    }
+
+    private startHover = () => {
+        this.setState({ hover: true });
+    };
+    private stopHover = () => {
+        this.setState({ hover: false });
+    };
+
+    render() {
+        let color: Color = this.props.color;
+        if (this.props.active && this.props.activeColor) {
+            color = this.props.activeColor;
+        } else if (this.state.hover && this.props.hoverColor) {
+            color = this.props.hoverColor;
+        }
+
+        const style: React.CSSProperties = {
+            backgroundColor: color.toHexString(),
+        };
+        return (
+            <div
+                className={
+                    this.props.active ? "tabmenuitem-active" : "tabmenuitem"
+                }
+                style={style}
+                onClick={this.props.onClick}
+                onMouseEnter={this.startHover}
+                onMouseLeave={this.stopHover}
+            >
+                <span className="tabmenuitem-title">{this.props.title}</span>
+            </div>
+        );
+    }
+}
 
 export interface TabProps {
     readonly title: string;
@@ -21,6 +62,9 @@ export interface TabProps {
 }
 
 export interface TabMenuProps {
+    readonly tabColor: Color;
+    readonly contentColor: Color;
+    readonly backgroundColor: Color;
     readonly tabs: ReadonlyArray<TabProps>;
 }
 
@@ -52,19 +96,36 @@ export class TabMenu extends React.Component<TabMenuProps, TabMenuState> {
     };
 
     render() {
+        const lighter = this.props.tabColor.clone();
+        lighter.red *= 1.2;
+        lighter.green *= 1.2;
+        lighter.blue *= 1.2;
         return (
-            <div className="tabmenu">
+            <div
+                className="tabmenu"
+                style={{
+                    backgroundColor: this.props.backgroundColor.toHexString(),
+                }}
+            >
                 <div className="tabmenu-list">
                     {this.props.tabs.map(t => (
                         <TabItem
                             key={t.title}
                             active={t.title === this.state.title}
                             title={t.title}
+                            color={this.props.tabColor}
+                            hoverColor={lighter}
+                            activeColor={this.props.contentColor}
                             onClick={() => this.onSelectTab(t.title)}
                         />
                     ))}
                 </div>
-                <div className="tab-content">
+                <div
+                    className="tab-content"
+                    style={{
+                        backgroundColor: this.props.contentColor.toHexString(),
+                    }}
+                >
                     {this.state.content || "Please select a tab"}
                 </div>
             </div>

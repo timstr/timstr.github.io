@@ -3,7 +3,9 @@ import { FaceIcon } from "./FaceIcon";
 import { TabMenu } from "./TabMenu";
 import { Songs } from "./Songs";
 import { Videos } from "./Videos";
-import { Fractals } from "./Fractals";
+import { ImageList } from "./ImageList";
+import { CoolGifs } from "./CoolGifs";
+import { Color } from "../interfaces/Color";
 
 export const Main = () => (
     <>
@@ -13,10 +15,15 @@ export const Main = () => (
                 <FaceIcon />
                 <h1 className="mainheader">Welcome to Tim</h1>
                 <TabMenu
+                    tabColor={new Color("#c2bed8")}
+                    contentColor={new Color("#ffffff")}
+                    backgroundColor={new Color("#7165af")}
                     tabs={[
                         {
                             title: "About Me",
-                            render: () => <h1>I am Tim</h1>,
+                            render: () => (
+                                <h1 style={{ minHeight: "200px" }}>I am Tim</h1>
+                            ),
                         },
                         {
                             title: "A Cool Video",
@@ -28,7 +35,11 @@ export const Main = () => (
                         },
                         {
                             title: "Pictures I Done",
-                            render: () => <Fractals />,
+                            render: () => <ImageList />,
+                        },
+                        {
+                            title: "Cool Gifs",
+                            render: () => <CoolGifs />,
                         },
                     ]}
                 />
