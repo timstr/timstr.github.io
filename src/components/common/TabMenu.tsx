@@ -76,9 +76,6 @@ interface TabMenuState {
     readonly tabs: ReadonlyArray<TabProps>;
 }
 
-// TODO: tabs disappear when screen is too narrow
-// consider putting overflowing tabs on secondary rows
-// might needs refs and component lifetime functions
 export class TabMenu extends React.Component<TabMenuProps, TabMenuState> {
     constructor(props: TabMenuProps) {
         super(props);

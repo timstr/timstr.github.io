@@ -1,6 +1,5 @@
 import * as React from "react";
 import { FaceIcon } from "./FaceIcon";
-import { TabMenu } from "./Common/TabMenu";
 import { Color } from "../interfaces/Color";
 import { AboutMe } from "./AboutMe/AboutMe";
 import { CurriculumVitae } from "./CurriculumVitae/CurriculumVitae";
@@ -9,6 +8,7 @@ import { Fractals } from "./Fractals/Fractals";
 import { RigidBodyDynamics } from "./RigidBodyDynamics/RigidBodyDynamics";
 import { CellularAutomata } from "./CellularAutomata/CellularAutomata";
 import { OtherProjects } from "./OtherProjects/OtherProjects";
+import { TabMenu } from "./Common/TabMenu";
 
 export const Main = () => (
     <>
