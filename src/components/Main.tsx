@@ -4,11 +4,11 @@ import { Color } from "../interfaces/Color";
 import { AboutMe } from "./AboutMe/AboutMe";
 import { CurriculumVitae } from "./CurriculumVitae/CurriculumVitae";
 import { Flosion } from "./Flosion/Flosion";
-import { Fractals } from "./Fractals/Fractals";
 import { RigidBodyDynamics } from "./RigidBodyDynamics/RigidBodyDynamics";
 import { CellularAutomata } from "./CellularAutomata/CellularAutomata";
 import { OtherProjects } from "./OtherProjects/OtherProjects";
 import { TabMenu } from "./Common/TabMenu";
+import { Fractals } from "./Fractals/Fractals";
 
 export const Main = () => (
     <>

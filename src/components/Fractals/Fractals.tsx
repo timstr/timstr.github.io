@@ -1,85 +1,26 @@
 import * as React from "react";
-import { LazyImage } from "../Common/LazyImage";
-
-/**
- * TODO:
- *  - explanation
- *  - organize by topic
- *  - talk about software used
- *  - screenshots
- *  - include gifs
- */
-
-const Pictures = [
-    "algae",
-    "alveoli",
-    "berryshake",
-    "box",
-    "buddha",
-    "cauliflower",
-    "clockwork",
-    "contrail",
-    "cubes1",
-    "cubes2",
-    "eye",
-    "flyingmountains",
-    "gasbox",
-    "glbox1",
-    "glbox2",
-    "greensponge",
-    "hydra",
-    "ironsprout",
-    "mandelbox1",
-    "mandelbox2",
-    "mandelbox3",
-    "mandelbox4",
-    "map",
-    "mau5",
-    "octree",
-    "oilfilm",
-    "particleaccelerator",
-    "rose",
-    "sand",
-    "saturn",
-    "skullraa",
-    "spongeheirarchy",
-    "teddytoast",
-    "toroidalvortex",
-    "tree",
-    "voxelplanet",
-];
-
-const ImageIcon = (props: { image: string }) => (
-    <div className="pieceicon">
-        <a
-            href={`img/${props.image}.png`}
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <LazyImage
-                className="pieceicon-img"
-                src={`img/${props.image}_small.png`}
-            />
-        </a>
-    </div>
-);
+import { TabMenu } from "../Common/TabMenu";
+import { Color } from "../../interfaces/Color";
+import { AboutFractals } from "./AboutFractals";
+import { FractalGallery } from "./FractalGallery";
 
 export const Fractals = () => (
-    <>
-        <div className="fractals">
-            {Pictures.map(img => (
-                <ImageIcon key={img} image={img} />
-            ))}
-        </div>
-        <div>
-            More images at{" "}
-            <a
-                href="https://timstraubinger.tumblr.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                timstraubinger.tumblr.com/
-            </a>
-        </div>
-    </>
+    <TabMenu
+        tabColor={new Color("#66DD88")}
+        contentColor={new Color("#99FFBB")}
+        backgroundColor={new Color("#FFFFFF")}
+    >
+        {gotoTab => [
+            {
+                title: "About",
+                render: () => (
+                    <AboutFractals gotoGallery={() => gotoTab("Gallery")} />
+                ),
+            },
+            {
+                title: "Gallery",
+                render: () => <FractalGallery />,
+            },
+        ]}
+    </TabMenu>
 );

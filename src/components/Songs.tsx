@@ -1,5 +1,9 @@
 import * as React from "react";
 import { SoundCloudPlayer } from "./Common/SoundCloudPlayer";
+import { Link } from "./Common/Link";
+
+// TODO: integrate this with Flosion page
+// consider adding "gallery" to Flosion page
 
 const PlayList = [
     "362396984", // Black sands exerpt
@@ -26,13 +30,9 @@ export const Songs = () => (
         ))}
         <div>
             More songs at{" "}
-            <a
-                href="https://soundcloud.com/timstraubinger"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+            <Link dst="https://soundcloud.com/timstraubinger">
                 soundcloud.com/timstraubinger
-            </a>
+            </Link>
         </div>
     </>
 );

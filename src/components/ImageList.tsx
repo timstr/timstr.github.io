@@ -1,5 +1,6 @@
 import * as React from "react";
 import { LazyImage } from "./Common/LazyImage";
+import { Link } from "./Common/Link";
 
 const Pictures = [
     "algae",
@@ -42,16 +43,12 @@ const Pictures = [
 
 const ImageIcon = (props: { image: string }) => (
     <div className="pieceicon">
-        <a
-            href={`img/${props.image}.png`}
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <Link dst={`img/${props.image}.png`}>
             <LazyImage
                 className="pieceicon-img"
                 src={`img/${props.image}_small.png`}
             />
-        </a>
+        </Link>
     </div>
 );
 
@@ -64,13 +61,9 @@ export const ImageList = () => (
         </div>
         <div>
             More images at{" "}
-            <a
-                href="https://timstraubinger.tumblr.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+            <Link dst="https://timstraubinger.tumblr.com/">
                 timstraubinger.tumblr.com/
-            </a>
+            </Link>
         </div>
     </>
 );

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Section } from "../Common/Section";
 
 /**
  * TODO:
@@ -18,9 +19,11 @@ interface AboutMeProps {
 export const AboutMe = (props: AboutMeProps) => (
     <div>
         <h1>I am Tim</h1>
-        <p>This is a quick, informal bio</p>
-        <p>
+        <Section header={<h2>Bio</h2>}>
+            This will be a quick, informal bio
+        </Section>
+        <Section header={<h2>Resume</h2>}>
             Click here for my <button onClick={props.gotoCV}>resume</button>
-        </p>
+        </Section>
     </div>
 );

@@ -2,20 +2,16 @@ import * as React from "react";
 import { TabMenu } from "./Common/TabMenu";
 import { Color } from "../interfaces/Color";
 import { LazyImage } from "./Common/LazyImage";
+import { Link } from "./Common/Link";
 
 // TODO: repurpose this code for the fractals page
 
 const GifList = ["flying", "gooflow", "fovsilliness", "orbit"];
 
 const GifImage = (props: { image: string }) => (
-    <a
-        href={`img/${props.image}.gif`}
-        target="_blank"
-        rel="noopener noreferrer"
-        key={props.image}
-    >
+    <Link dst={`img/${props.image}.gif`}>
         <LazyImage className="coolgif" src={`img/${props.image}.gif`} />
-    </a>
+    </Link>
 );
 
 export const CoolGifs = () => (
