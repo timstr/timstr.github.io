@@ -8,7 +8,6 @@ import { PlatformerGame } from "./PlatformerGame";
 
 export const OtherProjects = () => (
     <TabMenu
-        tabColor={new Color("#DDDD22")}
         contentColor={new Color("#FFFF66")}
         backgroundColor={new Color("#FFFFFF")}
     >

@@ -7,7 +7,7 @@ import { Link } from "../Common/Link";
 const Images = (props: { names: string[] }) => (
     <div>
         {props.names.map(str => (
-            <ImageIcon image={str} />
+            <ImageIcon image={str} key={str} />
         ))}
     </div>
 );

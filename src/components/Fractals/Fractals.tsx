@@ -6,7 +6,6 @@ import { FractalGallery } from "./FractalGallery";
 
 export const Fractals = () => (
     <TabMenu
-        tabColor={new Color("#66DD88")}
         contentColor={new Color("#99FFBB")}
         backgroundColor={new Color("#FFFFFF")}
     >

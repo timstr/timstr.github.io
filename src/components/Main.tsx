@@ -1,14 +1,13 @@
 import * as React from "react";
 import { FaceIcon } from "./FaceIcon";
 import { Color } from "../interfaces/Color";
-import { AboutMe } from "./AboutMe/AboutMe";
-import { CurriculumVitae } from "./CurriculumVitae/CurriculumVitae";
 import { Flosion } from "./Flosion/Flosion";
 import { RigidBodyDynamics } from "./RigidBodyDynamics/RigidBodyDynamics";
 import { CellularAutomata } from "./CellularAutomata/CellularAutomata";
 import { OtherProjects } from "./OtherProjects/OtherProjects";
 import { TabMenu } from "./Common/TabMenu";
 import { Fractals } from "./Fractals/Fractals";
+import { AboutMe } from "./AboutMe/AboutMe";
 
 export const Main = () => (
     <>
@@ -18,22 +17,13 @@ export const Main = () => (
                 <FaceIcon />
                 <h1 className="mainheader">Welcome to Tim</h1>
                 <TabMenu
-                    tabColor={new Color("#c2bed8")}
                     contentColor={new Color("#ffffff")}
-                    backgroundColor={new Color("#7165af")}
+                    backgroundColor={new Color("#626289")}
                 >
-                    {gotoTab => [
+                    {() => [
                         {
                             title: "About Me",
-                            render: () => (
-                                <AboutMe
-                                    gotoCV={() => gotoTab("Curriculum Vitae")}
-                                />
-                            ),
-                        },
-                        {
-                            title: "Curriculum Vitae",
-                            render: () => <CurriculumVitae />,
+                            render: () => <AboutMe />,
                         },
                         {
                             title: "Flosion",

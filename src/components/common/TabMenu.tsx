@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Color } from "../../interfaces/Color";
+import { Color, linearMix } from "../../interfaces/Color";
 
 interface TabItemProps {
     readonly color: Color;
@@ -62,7 +62,6 @@ export interface TabProps {
 }
 
 export interface TabMenuProps {
-    readonly tabColor: Color;
     readonly contentColor: Color;
     readonly backgroundColor: Color;
     readonly children: (
@@ -101,10 +100,12 @@ export class TabMenu extends React.Component<TabMenuProps, TabMenuState> {
     };
 
     render() {
-        const lighter = this.props.tabColor.clone();
-        lighter.red *= 1.2;
-        lighter.green *= 1.2;
-        lighter.blue *= 1.2;
+        const tabColor = linearMix(
+            this.props.backgroundColor,
+            this.props.contentColor,
+            0.5
+        );
+        const lighter = linearMix(tabColor, new Color("#fff"), 0.5);
         return (
             <div
                 className="tabmenu"
@@ -118,7 +119,7 @@ export class TabMenu extends React.Component<TabMenuProps, TabMenuState> {
                             key={t.title}
                             active={t.title === this.state.title}
                             title={t.title}
-                            color={this.props.tabColor}
+                            color={tabColor}
                             hoverColor={lighter}
                             activeColor={this.props.contentColor}
                             onClick={() => this.onSelectTab(t.title)}

@@ -15,3 +15,7 @@ export const Section = (props: SectionProps) => (
         </div>
     </div>
 );
+
+export const SubSection = (props: { children: React.ReactNode }) => (
+    <div className="subsection">{props.children}</div>
+);

@@ -28,6 +28,11 @@ p {
     text-align: justify;
 }
 
+code {
+    background-color: #6666ff20;
+    border-radius: 2px;
+}
+
 .backdrop {
     position: absolute;
     left: 0px;
@@ -119,6 +124,7 @@ p {
 
 .tab-content {
     padding-top: 5px;
+    min-height: 500px;
 }
 
 .soundcloudplayer {
@@ -188,4 +194,13 @@ p {
 }
 .section-contents {
     display: block;
+}
+.subsection {
+    border-top: 3px solid #00000040;
+}
+
+.multicolumn {
+    column-count: 3;
+    column-gap: 20px;
+    text-align: initial;
 }
