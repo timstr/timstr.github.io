@@ -54,7 +54,7 @@ export const FractalGallery = () => (
     <>
         <div className="fractals">
             {Pictures.map(img => (
-                <ImageIcon key={img} image={img} />
+                <ImageIcon key={img} image={"fractals/" + img} />
             ))}
         </div>
         <div>

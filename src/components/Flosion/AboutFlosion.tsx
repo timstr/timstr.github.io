@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Section } from "../Common/Section";
 
-export const About = () => (
+export const AboutFlosion = () => (
     <>
         <h1>About Flosion</h1>
         <Section header={<h2>What is it?</h2>}>
@@ -46,9 +46,9 @@ export const About = () => (
                 my software took shape and the first few interesting-sounding
                 glitches were then followed by recognizable melodies and
                 recreations of effects that I was familiar with from elsewhere.
-                There's still a lot I plan to do, but the foundations already in
-                place, I'm hoping Flosion will eventually be good enough to
-                create freely with and share with the community.
+                There's still a lot I plan to do, but with the foundations
+                already in place, I'm hoping Flosion will eventually be good
+                enough to create freely with and to share with the community.
             </p>
             <p>
                 The end goal is to have software that allows users to play with

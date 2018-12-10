@@ -4,10 +4,10 @@ import { ImageIcon } from "../Common/ImageIcon";
 import { LazyImage } from "../Common/LazyImage";
 import { Link } from "../Common/Link";
 
-const Images = (props: { names: string[] }) => (
+const FractalImages = (props: { names: string[] }) => (
     <div>
         {props.names.map(str => (
-            <ImageIcon image={str} key={str} />
+            <ImageIcon image={"fractals/" + str} key={str} />
         ))}
     </div>
 );
@@ -31,7 +31,7 @@ export const AboutFractals = (props: Props) => (
                 </>
             }
         >
-            <ImageIcon image="fractalui" />
+            <ImageIcon image="fractals/fractalui" />
         </Section>
 
         <Section
@@ -63,7 +63,7 @@ export const AboutFractals = (props: Props) => (
                 </>
             }
         >
-            <Images
+            <FractalImages
                 names={[
                     "particleaccelerator",
                     "tree",
@@ -77,28 +77,30 @@ export const AboutFractals = (props: Props) => (
 
         <Section header={<h2>2D Fractals (with texture)</h2>}>
             UV mapping using curvature and amplitude
-            <Images names={["algae", "cauliflower", "oilfilm", "saturn"]} />
+            <FractalImages
+                names={["algae", "cauliflower", "oilfilm", "saturn"]}
+            />
             For comparison, two of these are textured using{" "}
-            <Link dst="img/seaweed.png">this picture of seaweed</Link>.
+            <Link dst="img/fractals/seaweed.png">this picture of seaweed</Link>.
         </Section>
 
         <Section header={<h2>3D Fractals</h2>}>
             Using CPU. Oh I did not sleep that night
-            <Images
+            <FractalImages
                 names={["mandelbox4", "mandelbox3", "mandelbox1", "mandelbox2"]}
             />
         </Section>
 
         <Section header={<h2>3D Fractals (GLSL)</h2>}>
             Blinn-Phong shading maybe?
-            <Images names={["glbox1", "glbox2"]} />
+            <FractalImages names={["glbox1", "glbox2"]} />
         </Section>
 
         <Section header={<h2>Other</h2>}>mostly cubes here</Section>
-        <Images names={["cubes1", "cubes2", "octree", "voxelplanet"]} />
-        <LazyImage src="img/flying.gif" />
-        <LazyImage src="img/fovsilliness.gif" />
-        <LazyImage src="img/gooflow.gif" />
-        <LazyImage src="img/orbit.gif" />
+        <FractalImages names={["cubes1", "cubes2", "octree", "voxelplanet"]} />
+        <LazyImage src="fractals/flying.gif" />
+        <LazyImage src="fractals/fovsilliness.gif" />
+        <LazyImage src="fractals/gooflow.gif" />
+        <LazyImage src="fractals/orbit.gif" />
     </>
 );

@@ -11,4 +11,9 @@ import * as React from "react";
  *  - github link
  */
 
-export const RigidBodyDynamics = () => <h1>Rigid Body Dynamics</h1>;
+export const RigidBodyDynamics = () => (
+    <>
+        <h1>Rigid Body Dynamics</h1>
+        <p>Coming soon</p>
+    </>
+);

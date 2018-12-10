@@ -10,7 +10,7 @@ export const ImageIcon = (props: { image: string }) => (
         <Link dst={`img/${props.image}.png`}>
             <LazyImage
                 className="pieceicon-img"
-                src={`img/${props.image}_small.png`}
+                src={`${props.image}_small.png`}
             />
         </Link>
     </div>

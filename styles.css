@@ -33,6 +33,10 @@ code {
     border-radius: 2px;
 }
 
+pre {
+    margin: 0px;
+}
+
 .backdrop {
     position: absolute;
     left: 0px;
@@ -106,8 +110,7 @@ code {
 }
 .tabmenuitem {
     top: 0px;
-    transition: box-shadow 0.25s, background-color 0.25s, height 0.25s,
-        top 0.25s;
+    transition: box-shadow 0.25s, background-color 0.25s, height 0.25s, top 0.25s;
 }
 .tabmenuitem:hover {
     top: -5px;
@@ -196,6 +199,7 @@ code {
     display: block;
 }
 .subsection {
+    margin-top: 30px;
     border-top: 3px solid #00000040;
 }
 
@@ -203,4 +207,33 @@ code {
     column-count: 3;
     column-gap: 20px;
     text-align: initial;
+}
+
+.bigimage {
+    margin: 5px;
+    align-content: center;
+}
+.bigimage-img {
+    width: 100%;
+    max-width: 700px;
+}
+
+.codesnippet {
+    color: #cecece;
+    background-color: #2b2b2b;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+.code-keyword {
+    color: #000066;
+}
+.code-type {
+    color: #006633;
+}
+.code-name {
+    color: #000000;
+}
+.code-comment {
+    color: #006600;
 }

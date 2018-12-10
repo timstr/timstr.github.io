@@ -8,4 +8,9 @@ import * as React from "react";
  *  - github link
  */
 
-export const TimsGUI = () => <h1>Tim's GUI</h1>;
+export const TimsGUI = () => (
+    <>
+        <h1>Tim's GUI</h1>
+        <p>Coming soon</p>
+    </>
+);

@@ -1,29 +1,20 @@
 import * as React from "react";
 import { TabMenu } from "../Common/TabMenu";
 import { Color } from "../../interfaces/Color";
-import { About } from "./About";
+import { AboutFlosion } from "./AboutFlosion";
 import { HowItWorks } from "./HowItWorks";
 import { Examples } from "./Examples";
-
-/**
- * TODO:
- *  - lots of explanation, by topic
- *  - brief history?
- *  - screenshots
- *  - sample sounds
- *  - github link
- *  - executable download?
- */
+import { Implementation } from "./Implementation";
+import { SongGallery } from "./SongGallery";
 
 export const Flosion = () => (
-    <TabMenu
-        backgroundColor={new Color("#fff")}
-        contentColor={new Color("#bbf")}
-    >
+    <TabMenu backgroundColor={new Color("#fff")} contentColor={new Color("#ddf")}>
         {() => [
-            { title: "About", render: () => <About /> },
+            { title: "About", render: () => <AboutFlosion /> },
             { title: "How It Works", render: () => <HowItWorks /> },
+            { title: "Implementation", render: () => <Implementation /> },
             { title: "Examples", render: () => <Examples /> },
+            { title: "Song Gallery", render: () => <SongGallery /> },
         ]}
     </TabMenu>
 );

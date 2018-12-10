@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Section, SubSection } from "../Common/Section";
+import { BigImage } from "../Common/BigImage";
 
 export const HowItWorks = () => (
     <>
@@ -11,14 +12,16 @@ export const HowItWorks = () => (
                 There are also objects, which produce and consume this data. The
                 two types, naturally, are sound objects and number objects.
             </p>
+            <BigImage name="flosion/numbersandsounds" />
             <h4>Number Objects</h4>
             <p>
                 Number objects have no state. They can only accept numbers as
                 inputs and always produce numbers as outputs. These act just
                 familiar mathematical functions. Examples of number objects
                 include addition, multiplication, trigonometric functions, and
-                numeric constants. [TODO: drawing of various number objects]
+                numeric constants.
             </p>
+            <BigImage name="flosion/numberobjects" />
             <h4>Sound Objects</h4>
             <p>
                 Sound objects produce a stream of sound that can be listened to
@@ -31,9 +34,9 @@ export const HowItWorks = () => (
                 the object's state, which can be used as inputs to other
                 objects. Sound objects are allowed to have stateful information
                 that changes over time as it produces sound. Some examples
-                include an amplifier, an echo effect, or a sound clip. [TODO:
-                drawing of various sound objects]
+                include an amplifier, an echo effect, or a sound clip.
             </p>
+            <BigImage name="flosion/soundobjects" />
             <SubSection>
                 <h4>Flow Networks</h4>
                 <p>
@@ -47,10 +50,29 @@ export const HowItWorks = () => (
                     For example, one can attach the output of a sound clip
                     object to the input of an amplifier object, to define a
                     network which produces a louder or quieter version of the
-                    original sound clip. [TODO: draw this setup] Of course,
-                    these networks can get far more interesting. [TODO: draw a
-                    more interesting setup?]
+                    original sound clip.
                 </p>
+                <BigImage name="flosion/ampnetwork" />
+                <p>Of course, these networks can get far more interesting.</p>
+                <BigImage name="flosion/morecomplicated" />
+            </SubSection>
+            <SubSection>
+                <h4>Inputs and Outputs</h4>
+                <p>
+                    For sending and receiving numbers, there are of number
+                    inputs and number outputs. There are also sound ouputs,
+                    which produce streams of sound, and sound inputs, which
+                    consume them. There are two types of sound inputs,
+                    single-inputs and multi-inputs. A sound output that is
+                    connected to a single-input always produces a single stream
+                    of sound for that input. But a sound output that is
+                    connected to a multi-input can produce multiple streams, at
+                    the same time. A multi-input always has some known arity,
+                    which generalizes the number of streams it can receive in
+                    parallel. A single-input is essentially a special case of a
+                    multi-input, with a fixed arity of 1.
+                </p>
+                <BigImage name="flosion/inputsandoutputs" />
             </SubSection>
             <SubSection>
                 <h4>Parallelism</h4>
@@ -62,19 +84,20 @@ export const HowItWorks = () => (
                     sometimes the same sound stream needs to be used in multiple
                     places, and the results want to be heard in real-time.
                     [TODO: draw one sound source being used twice in one
-                    network] Another reason is the existence of a special type
-                    of sound input, the multi-input, that calls upon its input
-                    multiple times in parallel, which is very useful for
-                    creating some types of sound objects. For example, a
-                    synthesizer can be plugged into a sound object that
+                    network] Another reason is the existence of sound
+                    multi-inputs, which call upon their inputs multiple times in
+                    parallel. Multi-inputs are very useful for creating certain
+                    types of sound objects. For example, a synthesizer can be
+                    plugged into the multi-input of a sound object that
                     generates a melody from some number of notes notes. The
                     result is that if the melody has n notes, then for every
                     state of the melody generator, there will be n states in the
                     synthesizer. This way, the melody can use the same
                     synthesizer multiple times in parallel to play overlapping
                     notes, without any distortions or conflict from shared
-                    state. [TODO: draw this synth melody example]
+                    state.
                 </p>
+                <BigImage name="flosion/parallelsynth" />
                 <h4>Relativism</h4>
                 <p>
                     Another quirk of Flosion is that time is very relative. Some
@@ -86,6 +109,7 @@ export const HowItWorks = () => (
                     knows. This isn't as big of a problem as it might sound. In
                     practice, it just works out.
                 </p>
+                <BigImage name="flosion/timestretchdelay" />
             </SubSection>
             <SubSection>
                 <h4>The Flow of Information</h4>
@@ -98,38 +122,42 @@ export const HowItWorks = () => (
                     child sound object, while the child object only ever sees
                     one parent state. Thus it's a bit meaningless for the parent
                     object to ask for stateful information from the child, while
-                    the it always makes sense for a child to ask for stateful
+                    it always makes sense for a child to ask for stateful
                     information from a parent. Of course, this restriction
                     doesn't apply for constants and numbers that don't depend on
                     state, but those never change and are a bit boring anyway.
+                    Thus, sounds flow up the network, and numbers flow down the
+                    network, directly or indirectly, through some intermediate
+                    number objects. With both numbers and sound streams, closed
+                    loops would cause an infinite recursion, and so are not
+                    allowed.
                 </p>
+                <BigImage name="flosion/goodbadconnections" />
+                <p>
+                    Finally, an output can be connected to any number of inputs,
+                    but every input can have at most one output.
+                </p>
+                <BigImage name="flosion/oneinputmanyoutputs" />
             </SubSection>
         </Section>
-        <Section header={<h2>Abstract Design</h2>}>
+        <Section header={<h2>Abstract Structure</h2>}>
             <p>
-                TODO: explain DAG, state tree, parallelism, properties of
-                dependencies and dependants, lots of drawings
+                The networks of sound objects in Flosion always form a directed,
+                acyclic graph (DAG). Number objects also always connect to form
+                a DAG, though, as discussed above, the flow of sound and numbers
+                is always in the opposite direction.
             </p>
-            <SubSection>
-                It's a weird kind of tree - sounds and numbers
-            </SubSection>
-            <SubSection>Sound flows up</SubSection>
-            <SubSection>Stateful data flows down</SubSection>
-            <SubSection>
-                Processing objects can be queried many times in parallel
-            </SubSection>
-            <SubSection>Processing objects can have many states</SubSection>
-            <SubSection>Sound Inputs and Outputs</SubSection>
-            <SubSection>Number Inputs and Outputs</SubSection>
-        </Section>
-        <Section header={<h2>Implementation</h2>}>
+            <BigImage name="flosion/subgraphs" />
             <p>
-                TODO: explain key parts of the C++ code, possibly using
-                syntax-highlighting for code snippets
+                The states of sound objects are a bit special. Every state has a
+                parent state, and every state can have multiple child states.
+                The states of the sound objects thus form a tree, and this tree
+                has a similar structure to the overall sound object network.
+                Given any sound object, it has one state for every sound
+                single-input it is connected to, and n states for every n-adic
+                multi-input it is connected to.
             </p>
-        </Section>
-        <Section header={<h2>Source Code</h2>}>
-            <p>TODO: link to github repo</p>
+            <BigImage name="flosion/statetree" />
         </Section>
     </>
 );
