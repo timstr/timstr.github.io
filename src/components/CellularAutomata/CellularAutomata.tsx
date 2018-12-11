@@ -5,6 +5,6 @@ import * as React from "react";
 export const CellularAutomata = () => (
     <>
         <h1>Cellular Automata</h1>
-        <p>Coming soon</p>
+        Coming soon
     </>
 );

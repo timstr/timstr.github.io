@@ -14,6 +14,6 @@ import * as React from "react";
 export const RigidBodyDynamics = () => (
     <>
         <h1>Rigid Body Dynamics</h1>
-        <p>Coming soon</p>
+        Coming soon
     </>
 );

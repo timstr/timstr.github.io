@@ -5,6 +5,6 @@ import * as React from "react";
 export const RandomThings = () => (
     <>
         <h1>Random things</h1>
-        <p>Coming soon</p>
+        Coming soon
     </>
 );

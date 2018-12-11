@@ -123,7 +123,9 @@ export const Implementation = () => (
                     a sound object that simply loads a sound from a file and produces this sound as
                     its output. To make do this, only two things are needed. One needs to define
                     what information it stores as part of its state, which is done here in the{" "}
-                    <code>AudioState</code> class.
+                    <code>AudioState</code> class. In this case, the only state that's needed is an
+                    index into where in the audio file we're currently listening from, which shall
+                    be called <code>pos</code>.
                 </p>
                 <CodeSnippet>{AudioStateSnippet}</CodeSnippet>
                 <p>
@@ -134,17 +136,18 @@ export const Implementation = () => (
                     to do the actual work of playing the sound. The implementation isn't shown here,
                     since it's mostly <code>for</code>-loops and and sample frequency calculations
                     and audio channel checks, but all it does is copy the current part of the audio
-                    clip into the current <code>SoundChunk</code> of the stream. This audio clip
-                    itself is stored in the <code>soundbuffer</code> member. Note that this piece of
-                    sound information will always be the same, no matter who's listening to this{" "}
-                    <code>Audio</code> object, and therefore, it is not stored in the{" "}
-                    <code>AudioState</code> type. As an extra, this class also defines and exposes a{" "}
-                    <code>current_time</code> member, which is a special kind of number source that
-                    is associated with the state of the <code>Audio</code> object. This number
-                    source can be used to query the (subjective) current time of the{" "}
-                    <code>Audio</code> object. As you can see, this work, which is complicated and
-                    delicate at heart, is handled well by templates and inheritance, and the code
-                    needed to implement new and interesting features is minimal.
+                    clip into the current <code>SoundChunk</code> of the stream, using{" "}
+                    <code>state.pos</code> for book-keeping. This audio clip itself is stored in the{" "}
+                    <code>soundbuffer</code> member. Note that this piece of sound information will
+                    always be the same, no matter who's listening to this <code>Audio</code> object,
+                    and therefore, it is not stored in the <code>AudioState</code> type. As an
+                    extra, this class also defines and exposes a <code>current_time</code> member,
+                    which is a special kind of number source that is associated with the state of
+                    the <code>Audio</code> object. This number source can be used to query the
+                    (subjective) current time of the <code>Audio</code> object. As you can see, this
+                    work, which is complicated and delicate at heart, is handled well by templates
+                    and inheritance, and the code needed to implement new and interesting features
+                    is minimal.
                 </p>
                 <CodeSnippet>{AudioSnippet}</CodeSnippet>
             </SubSection>

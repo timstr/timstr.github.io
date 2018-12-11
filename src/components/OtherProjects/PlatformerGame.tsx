@@ -12,6 +12,6 @@ import * as React from "react";
 export const PlatformerGame = () => (
     <>
         <h1>Platformer Game</h1>
-        <p>Coming soon</p>
+        Coming soon
     </>
 );

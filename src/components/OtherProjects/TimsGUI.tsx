@@ -11,6 +11,6 @@ import * as React from "react";
 export const TimsGUI = () => (
     <>
         <h1>Tim's GUI</h1>
-        <p>Coming soon</p>
+        Coming soon
     </>
 );

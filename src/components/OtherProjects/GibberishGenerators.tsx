@@ -5,6 +5,6 @@ import * as React from "react";
 export const GibberishGenerators = () => (
     <>
         <h1>Gibberish generators</h1>
-        <p>Coming soon</p>
+        Coming soon
     </>
 );
