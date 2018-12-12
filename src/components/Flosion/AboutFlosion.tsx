@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Section } from "../Common/Section";
+import { BigImage } from "../Common/BigImage";
 
 export const AboutFlosion = () => (
     <>
@@ -13,6 +14,7 @@ export const AboutFlosion = () => (
                 the results in real-time. Every effect is highly configurable, and can be
                 parameterized by nearly anything else in the network.
             </p>
+            <BigImage name="flosion/simplesong" />
         </Section>
         <p />
         <Section header={<h2>Motivation</h2>}>

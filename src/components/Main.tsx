@@ -1,5 +1,4 @@
 import * as React from "react";
-import { FaceIcon } from "./FaceIcon";
 import { Color } from "../interfaces/Color";
 import { Flosion } from "./Flosion/Flosion";
 import { RigidBodyDynamics } from "./RigidBodyDynamics/RigidBodyDynamics";
@@ -14,12 +13,8 @@ export const Main = () => (
         <div className="backdrop" />
         <div className="maincontainer">
             <div className="mainbody">
-                <FaceIcon />
-                <h1 className="mainheader">Welcome to Tim</h1>
-                <TabMenu
-                    contentColor={new Color("#ffffff")}
-                    backgroundColor={new Color("#626289")}
-                >
+                <h1 className="mainheader">Tim's Portfolio</h1>
+                <TabMenu contentColor={new Color("#ffffff")} backgroundColor={new Color("#626289")}>
                     {() => [
                         {
                             title: "About Me",
