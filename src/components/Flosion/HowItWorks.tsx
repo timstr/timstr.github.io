@@ -61,9 +61,11 @@ export const HowItWorks = () => (
                     and multi-inputs. A sound output that is connected to a single-input always
                     produces a single stream of sound for that input. But a sound output that is
                     connected to a multi-input can produce multiple streams, at the same time. A
-                    multi-input always has some known arity, which is a number that generalizes the
-                    number of streams it can receive in parallel. A single-input is essentially a
-                    special case of a multi-input, with a fixed arity of 1.
+                    multi-input always has some known{" "}
+                    <Link dst="https://en.wikipedia.org/wiki/Arity">arity</Link>, which is a number
+                    that generalizes the number of streams it can receive in parallel. A
+                    single-input is essentially a special case of a multi-input, with a fixed arity
+                    of 1.
                 </p>
                 <BigImage name="flosion/inputsandoutputs" />
             </SubSection>
@@ -146,8 +148,9 @@ export const HowItWorks = () => (
                 The states of sound objects are a bit special. Every state has a parent state, and
                 every state can have multiple child states. The states of the sound objects thus
                 form a tree, and this tree has a similar structure to the overall sound object
-                network. Given any sound object, it has one state for every sound single-input it is
-                connected to, and n states for every n-adic multi-input it is connected to.
+                network. Given any sound object, it has one state for each state of every sound
+                single-input it is connected to, and n states for each state of every n-adic
+                multi-input it is connected to.
             </p>
             <BigImage name="flosion/statetree" />
         </Section>
