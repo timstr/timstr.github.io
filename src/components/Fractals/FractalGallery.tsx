@@ -59,9 +59,7 @@ export const FractalGallery = () => (
         </div>
         <div>
             More images at{" "}
-            <Link dst="https://timstraubinger.tumblr.com/">
-                timstraubinger.tumblr.com/
-            </Link>
+            <Link dst="https://timstraubinger.tumblr.com/">timstraubinger.tumblr.com/</Link>
         </div>
     </>
 );

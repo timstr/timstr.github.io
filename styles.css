@@ -226,15 +226,16 @@ pre {
     margin: 5px;
     padding: 5px;
 }
-.code-keyword {
-    color: #000066;
+
+.songlist {
+    text-align: center;
 }
-.code-type {
-    color: #006633;
-}
-.code-name {
-    color: #000000;
-}
-.code-comment {
-    color: #006600;
+
+.songbox {
+    width: 500px;
+    min-height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px 5px 20px 5px;
+    border-bottom: 3px solid #00000040;
 }
