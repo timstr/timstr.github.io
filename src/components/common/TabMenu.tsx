@@ -42,9 +42,7 @@ class TabItem extends React.Component<TabItemProps, TabItemState> {
         };
         return (
             <div
-                className={
-                    this.props.active ? "tabmenuitem-active" : "tabmenuitem"
-                }
+                className={this.props.active ? "tabmenuitem-active" : "tabmenuitem"}
                 style={style}
                 onClick={this.props.onClick}
                 onMouseEnter={this.startHover}
@@ -64,9 +62,7 @@ export interface TabProps {
 export interface TabMenuProps {
     readonly contentColor: Color;
     readonly backgroundColor: Color;
-    readonly children: (
-        gotoTab: (tab: string) => void
-    ) => ReadonlyArray<TabProps>;
+    readonly children: (gotoTab: (tab: string) => void) => ReadonlyArray<TabProps>;
 }
 
 interface TabMenuState {
@@ -100,11 +96,7 @@ export class TabMenu extends React.Component<TabMenuProps, TabMenuState> {
     };
 
     render() {
-        const tabColor = linearMix(
-            this.props.backgroundColor,
-            this.props.contentColor,
-            0.5
-        );
+        const tabColor = linearMix(this.props.backgroundColor, this.props.contentColor, 0.5);
         const lighter = linearMix(tabColor, new Color("#fff"), 0.5);
         return (
             <div
@@ -127,6 +119,7 @@ export class TabMenu extends React.Component<TabMenuProps, TabMenuState> {
                     ))}
                 </div>
                 <div
+                    key={this.state.title}
                     className="tab-content"
                     style={{
                         backgroundColor: this.props.contentColor.toHexString(),

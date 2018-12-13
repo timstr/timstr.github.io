@@ -24,16 +24,20 @@ export class LazyImage extends React.Component<LazyImageProps, LazyImageState> {
     };
 
     render() {
+        const extraClass = this.props.className ? " " + this.props.className : "";
         return (
-            <img
-                key={this.props.src}
-                className={"lazyimage" + (this.props.className ? " " + this.props.className : "")}
-                src={"img/" + this.props.src}
-                width={this.props.width}
-                height={this.props.height}
-                onLoad={this.handleLoad}
-                style={{ opacity: this.state.loaded ? 1 : 0 }}
-            />
+            <div className="lazyimage-container">
+                <img
+                    key={this.props.src}
+                    className={"lazyimage" + extraClass}
+                    src={"img/" + this.props.src}
+                    width={this.props.width}
+                    height={this.props.height}
+                    onLoad={this.handleLoad}
+                    style={{ opacity: this.state.loaded ? 1 : 0 }}
+                />
+                {this.state.loaded ? null : <div className="lazyimage-loading">Loading...</div>}
+            </div>
         );
     }
 }
