@@ -26,10 +26,8 @@ export class LazyImage extends React.Component<LazyImageProps, LazyImageState> {
     render() {
         return (
             <img
-                className={
-                    "lazyimage" +
-                    (this.props.className ? " " + this.props.className : "")
-                }
+                key={this.props.src}
+                className={"lazyimage" + (this.props.className ? " " + this.props.className : "")}
                 src={"img/" + this.props.src}
                 width={this.props.width}
                 height={this.props.height}

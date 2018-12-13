@@ -23,7 +23,7 @@ export const Intro = () => (
                 I'm currently finishing my bachelor's degree in Computer Science at UBC Vancouver.
                 When I'm not biking or exploring nature, I like to create my own worlds, usually
                 with software, sometimes with Lego. Most of my software projects revolve around
-                trying to emulate organic chaos and complexity of some form or another.
+                trying to emulate organic chaos and complexity of one form or another.
             </p>
             <p>
                 Take a look around. Please <a href="mailto:straubinger.tim@gmail.com">ask me</a> any

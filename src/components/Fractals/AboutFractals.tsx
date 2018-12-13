@@ -104,11 +104,11 @@ export const AboutFractals = (props: Props) => (
                         Here, I implemented a CPU-based{" "}
                         <Link dst="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">
                             ray-tracer
-                        </Link>
+                        </Link>{" "}
                         in C++, which simulates paths of light through space as they collide with
                         the computed fractal geometry. For 3D fractals, whose shape is complicated
                         and chaotic, these light paths need to take lots of very small steps to
-                        avoid skipping right through parts of the fractal. These small steps sizes
+                        avoid skipping right through parts of the fractal. These small step sizes
                         make this kind of ray tracing computationally expensive, especially when
                         done many times per pixel, for a million pixels, just for a single image.
                         Multi-threading can reduce the time significantly, though the rendering time
@@ -120,8 +120,8 @@ export const AboutFractals = (props: Props) => (
             <FractalImages names={["mandelbox4", "mandelbox3", "mandelbox1", "mandelbox2"]} />
             <SubSection>
                 <p>
-                    The same ray-tracing algorithm could also be used to render other things, like
-                    voxel clouds and octrees.
+                    I've also used the same ray-tracing algorithm to render other things, like voxel
+                    clouds and octrees.
                 </p>
                 <FractalImages names={["cubes1", "cubes2", "octree", "voxelplanet"]} />
             </SubSection>
