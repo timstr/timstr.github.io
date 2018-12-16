@@ -5,7 +5,7 @@ import { AboutFractals } from "./AboutFractals";
 import { FractalGallery } from "./FractalGallery";
 
 export const Fractals = () => (
-    <TabMenu contentColor={new Color("#99FFBB")} backgroundColor={new Color("#FFFFFF")}>
+    <TabMenu contentColor={new Color("#dddddd")} backgroundColor={new Color("#FFFFFF")}>
         {gotoTab => [
             {
                 title: "About",

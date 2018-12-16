@@ -7,10 +7,7 @@ import { RandomThings } from "./RandomThings";
 import { PlatformerGame } from "./PlatformerGame";
 
 export const OtherProjects = () => (
-    <TabMenu
-        contentColor={new Color("#FFFF66")}
-        backgroundColor={new Color("#FFFFFF")}
-    >
+    <TabMenu contentColor={new Color("#dddddd")} backgroundColor={new Color("#FFFFFF")}>
         {() => [
             {
                 title: "Tim's GUI",

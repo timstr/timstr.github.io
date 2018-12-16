@@ -23,7 +23,7 @@ const GifImage = (props: { image: string }) => (
 );
 
 export const CoolGifs = () => (
-    <TabMenu contentColor={new Color("#5fce84")} backgroundColor={new Color("#99FFBB")}>
+    <TabMenu contentColor={new Color("#cccccc")} backgroundColor={new Color("#dddddd")}>
         {() =>
             GifList.map(gif => ({
                 title: gif.title,

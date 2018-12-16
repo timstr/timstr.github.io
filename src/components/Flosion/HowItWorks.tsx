@@ -28,12 +28,10 @@ export const HowItWorks = () => (
                 objects as input. Sound objects can also take sound streams as inputs, modifying
                 them according to their design, and returning the result as their output. Sound
                 objects can additionally accept numbers as inputs, which may control various
-                behaviors of the sound object. Finally, sound objects can also produce numbers,
-                which typically represent a part of the object's state, which can be used as inputs
-                to other objects. Sound objects are allowed to have stateful information that
-                changes over time as it produces sound. Many sound objects also expose some of their
-                stateful information in the form of number outputs. Some examples include an
-                amplifier, an echo effect, or a sound clip.
+                behaviors of the sound object. Sound objects are allowed to have stateful
+                information that changes over time as it produces sound. Many sound objects also
+                expose some of their stateful information in the form of number outputs. Some
+                examples include an amplifier, an echo effect, or a sound clip.
             </p>
             <BigImage name="flosion/soundobjects" />
             <SubSection>
