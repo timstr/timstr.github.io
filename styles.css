@@ -67,9 +67,27 @@ pre {
     max-width: 1100px;
 }
 
+.intromain {
+    background-image: url("img/fractalbg.png");
+    min-height: 436px;
+    position: relative;
+}
+.intromain-child {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.myname {
+    color: #fff;
+    text-shadow: #000 0px 0px 5px;
+}
+
 .mainheader {
     min-height: 30px;
     margin: 20px 0px 20px 0px;
+    color: #fff;
 }
 
 .faceicon {
