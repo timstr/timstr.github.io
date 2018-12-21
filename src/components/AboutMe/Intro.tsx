@@ -16,8 +16,12 @@ import { FaceIcon } from "../FaceIcon";
 
 export const Intro = () => (
     <div>
-        <FaceIcon />
-        <h1>Hello! I am Tim Straubinger.</h1>
+        <div className="intromain">
+            <div className="intromain-child">
+                <FaceIcon />
+                <h1 className="myname">Tim Straubinger</h1>
+            </div>
+        </div>
         <Section header={<h2>Bio</h2>}>
             <p>
                 I'm currently finishing my bachelor's degree in Computer Science at UBC Vancouver.
