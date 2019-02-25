@@ -69,6 +69,7 @@ pre {
 
 .intromain {
     background-image: url("img/fractalbg.png");
+    background-position: center;
     min-height: 436px;
     position: relative;
 }
