@@ -9,7 +9,7 @@ import { SongGallery } from "./SongGallery";
 
 export const Flosion = () => (
     <TabMenu backgroundColor={new Color("#fff")} contentColor={new Color("#dddddd")}>
-        {() => [
+        {[
             { title: "About", render: () => <AboutFlosion /> },
             { title: "How It Works", render: () => <HowItWorks /> },
             { title: "Implementation", render: () => <Implementation /> },

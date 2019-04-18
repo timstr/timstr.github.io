@@ -15,7 +15,7 @@ export const Main = () => (
             <div className="mainbody">
                 <h1 className="mainheader">Tim's Portfolio</h1>
                 <TabMenu contentColor={new Color("#ffffff")} backgroundColor={new Color("#626289")}>
-                    {() => [
+                    {[
                         {
                             title: "About Me",
                             render: () => <AboutMe />,

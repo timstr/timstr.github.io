@@ -17,7 +17,7 @@ private:
     NumberSource* source;
 };`;
 
-export const AddObjectSnippet = `struct Add {
+export const AddObjectSnippet = `struct Add : NumberSource {
     float evaluate(const State* state) override {
         return input1.getValue(state) + input2.getValue(state);
     }

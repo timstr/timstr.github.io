@@ -23,10 +23,10 @@ export const Implementation = () => (
             </h4>
             <p>
                 Flosion is written in C++ and uses <Link dst="https://www.sfml-dev.org/">SFML</Link>{" "}
-                for drawing, playing sounds, handling user input and managing windows. Additionally,
-                Flosion uses a GUI library that I wrote myself and have used for other projects,
-                which is very much inspired by HTML and its JavaScript interface. The GUI is also
-                written in modern C++ and uses SFML.
+                for drawing, playing sounds, handling user input, and managing windows.
+                Additionally, Flosion uses a GUI library that I wrote myself and have used for other
+                projects, which is very much inspired by HTML and its JavaScript interface. The GUI
+                is also written in modern C++ and uses SFML.
             </p>
             <p>
                 The source code makes heavy use of inheritance and templates. Inheritance is used to
@@ -53,20 +53,20 @@ export const Implementation = () => (
                 this:
             </p>
             <CodeSnippet>{AddObjectSnippet}</CodeSnippet>
+            <p>
+                The <code>state</code> parameter is used to record the current context, and
+                represents a path in the state tree. It can be used to get the (relative) current
+                time, and is needed by stateful number sources (which live inside sound objects) to
+                retrieve the correct stateful information.
+            </p>
             <SubSection>
                 <h4>
                     <code>State</code> and <code>Stateful</code>
                 </h4>
                 <p>
-                    The <code>state</code> parameter is used to record the current context, and
-                    represents a path in the state tree. It can be used to get the (relative)
-                    current time, and is needed by stateful number sources (which live inside sound
-                    objects) to retrieve the correct stateful information.
-                </p>
-                <p>
                     Below is the <code>State</code> class, which is the base class of every type of
                     state. It simply stores a pointer to its parent state, and a pointer to the{" "}
-                    <code>Stateful</code>object that owns this state. A polymorphic{" "}
+                    <code>Stateful</code> object that owns this state. A polymorphic{" "}
                     <code>reset()</code> function is used to restore states to their original
                     condition. Derived <code>State</code> types are used to hold whatever
                     time-sensitive information that <code>Stateful</code> objects need to store.

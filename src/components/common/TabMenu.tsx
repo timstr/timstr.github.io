@@ -59,10 +59,14 @@ export interface TabProps {
     readonly render: () => React.ReactNode;
 }
 
+type TabList = ReadonlyArray<TabProps>;
+
+type TabListGenerator = (gotoTab: (tab: string) => void) => TabList;
+
 export interface TabMenuProps {
     readonly contentColor: Color;
     readonly backgroundColor: Color;
-    readonly children: (gotoTab: (tab: string) => void) => ReadonlyArray<TabProps>;
+    readonly children: TabList | TabListGenerator;
 }
 
 interface TabMenuState {
@@ -75,7 +79,10 @@ export class TabMenu extends React.Component<TabMenuProps, TabMenuState> {
     constructor(props: TabMenuProps) {
         super(props);
         let currentTab: TabProps | null = null;
-        let tabs = props.children(this.onSelectTab);
+        let tabs =
+            typeof props.children === "function"
+                ? props.children(this.onSelectTab)
+                : props.children;
         if (tabs.length > 0) {
             currentTab = tabs[0];
         }
