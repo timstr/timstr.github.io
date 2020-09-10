@@ -17,11 +17,8 @@ const GifList: GifProps[] = [
 ];
 
 const GifImage = (props: { image: string }) => (
-    <Link dst={`static/img/fractals/${props.image}.gif`}>
-        <LazyImage
-            className="coolgif"
-            src={`static/img/fractals/${props.image}.gif`}
-        />
+    <Link dst={`/static/img/fractals/${props.image}.gif`}>
+        <LazyImage className="coolgif" src={`fractals/${props.image}.gif`} />
     </Link>
 );
 
