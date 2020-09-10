@@ -1,8 +1,8 @@
 import * as React from "react";
-import { TabMenu } from "./Common/TabMenu";
 import { Color } from "../interfaces/Color";
-import { LazyImage } from "./Common/LazyImage";
-import { Link } from "./Common/Link";
+import { LazyImage } from "./LazyImage";
+import { Link } from "./Link";
+import { DynamicTabMenu } from "./DynamicTabMenu";
 
 interface GifProps {
     name: string;
@@ -17,16 +17,22 @@ const GifList: GifProps[] = [
 ];
 
 const GifImage = (props: { image: string }) => (
-    <Link dst={`img/fractals/${props.image}.gif`}>
-        <LazyImage className="coolgif" src={`fractals/${props.image}.gif`} />
+    <Link dst={`static/img/fractals/${props.image}.gif`}>
+        <LazyImage
+            className="coolgif"
+            src={`static/img/fractals/${props.image}.gif`}
+        />
     </Link>
 );
 
 export const CoolGifs = () => (
-    <TabMenu contentColor={new Color("#cccccc")} backgroundColor={new Color("#dddddd")}>
-        {GifList.map(gif => ({
+    <DynamicTabMenu
+        contentColor={new Color("#cccccc")}
+        backgroundColor={new Color("#dddddd")}
+    >
+        {GifList.map((gif) => ({
             title: gif.title,
             render: () => <GifImage image={gif.name} />,
         }))}
-    </TabMenu>
+    </DynamicTabMenu>
 );

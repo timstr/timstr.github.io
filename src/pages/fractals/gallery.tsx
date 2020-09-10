@@ -1,6 +1,15 @@
 import * as React from "react";
-import { LazyImage } from "./LazyImage";
-import { Link } from "./Link";
+import { renderPage } from "../../renderpage";
+import { ImageIcon } from "../../components/ImageIcon";
+
+/**
+ * TODO:
+ *  - explanation
+ *  - organize by topic
+ *  - talk about software used
+ *  - screenshots
+ *  - include gifs
+ */
 
 const Pictures = [
     "algae",
@@ -41,29 +50,13 @@ const Pictures = [
     "voxelplanet",
 ];
 
-const ImageIcon = (props: { image: string }) => (
-    <div className="pieceicon">
-        <Link dst={`static/img/${props.image}.png`}>
-            <LazyImage
-                className="pieceicon-img"
-                src={`static/img/${props.image}_small.png`}
-            />
-        </Link>
-    </div>
-);
-
-export const ImageList = () => (
+renderPage(
+    ["fractals", "gallery"],
     <>
         <div className="fractals">
             {Pictures.map((img) => (
-                <ImageIcon key={img} image={img} />
+                <ImageIcon key={img} image={"fractals/" + img} />
             ))}
-        </div>
-        <div>
-            More images at{" "}
-            <Link dst="https://timstraubinger.tumblr.com/">
-                timstraubinger.tumblr.com/
-            </Link>
         </div>
     </>
 );

@@ -1,47 +1,32 @@
 import * as React from "react";
+import { StaticTabMenuStack } from "./StaticTabMenu";
 import { Color } from "../interfaces/Color";
-import { Flosion } from "./Flosion/Flosion";
-import { RigidBodyDynamics } from "./RigidBodyDynamics/RigidBodyDynamics";
-import { CellularAutomata } from "./CellularAutomata/CellularAutomata";
-import { OtherProjects } from "./OtherProjects/OtherProjects";
-import { TabMenu } from "./Common/TabMenu";
-import { Fractals } from "./Fractals/Fractals";
-import { AboutMe } from "./AboutMe/AboutMe";
+import { LocalPath } from "../localpath";
 
-export const Main = () => (
+interface MainProps {
+    readonly currentTab: LocalPath;
+    readonly children: React.ReactNode;
+}
+
+const someNiceColours: Color[] = [
+    new Color("#626289"),
+    new Color("#FFFFFF"),
+    new Color("#DDDDDD"),
+    new Color("#FFFFFF"),
+    new Color("#DDDDDD"),
+];
+
+export const Main = (props: MainProps) => (
     <>
         <div className="backdrop" />
         <div className="maincontainer">
             <div className="mainbody">
                 <h1 className="mainheader">Tim's Portfolio</h1>
-                <TabMenu contentColor={new Color("#ffffff")} backgroundColor={new Color("#626289")}>
-                    {[
-                        {
-                            title: "About Me",
-                            render: () => <AboutMe />,
-                        },
-                        {
-                            title: "Flosion",
-                            render: () => <Flosion />,
-                        },
-                        {
-                            title: "Fractals",
-                            render: () => <Fractals />,
-                        },
-                        {
-                            title: "Rigid Body Dynamics",
-                            render: () => <RigidBodyDynamics />,
-                        },
-                        {
-                            title: "Cellular Automata",
-                            render: () => <CellularAutomata />,
-                        },
-                        {
-                            title: "Other Projects",
-                            render: () => <OtherProjects />,
-                        },
-                    ]}
-                </TabMenu>
+                <StaticTabMenuStack
+                    currentTab={props.currentTab}
+                    colours={someNiceColours}
+                    children={props.children}
+                />
             </div>
         </div>
     </>

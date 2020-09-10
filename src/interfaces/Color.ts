@@ -7,8 +7,8 @@ export class Color {
             this.parseHexString(x1);
         } else if (typeof x1 === "number") {
             this._r = x1;
-            this._g = x2;
-            this._b = x3;
+            this._g = x2!;
+            this._b = x3!;
             this._a = x4 === undefined ? 1 : x4;
         }
     }
