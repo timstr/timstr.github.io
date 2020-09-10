@@ -20,7 +20,7 @@ const pagePaths = glob
 // Entry is an object containing [pagename: "./pagename.tsx"] key-value pairs
 const entry = pagePaths.reduce((r, s) => ((r[s] = `./pages/${s}.tsx`), r), {});
 
-module.exports = {
+let config = {
     context: path.resolve(__dirname, "src/"),
 
     entry,
@@ -29,9 +29,6 @@ module.exports = {
         path: path.resolve(__dirname, "dist/"),
     },
     mode: production_mode ? "production" : "development",
-
-    // Enable sourcemaps for debugging webpack's output.
-    devtool: "source-map",
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
@@ -42,9 +39,6 @@ module.exports = {
         rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
             { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-
-            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
         ],
     },
 
@@ -78,3 +72,13 @@ module.exports = {
         )
     ),
 };
+
+if (!production_mode) {
+    config.devtool = "source-map";
+    config.module.rules.concat([
+        // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+        { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+    ]);
+}
+
+module.exports = [config];
