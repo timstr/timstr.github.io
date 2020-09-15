@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
-import { LocalPath } from "./localpath";
+import { LocalPath, makePathPrettyName } from "./localpath";
 import { Main } from "./components/Main";
 
 export function renderPage(path: LocalPath, element: JSX.Element) {
@@ -8,4 +8,5 @@ export function renderPage(path: LocalPath, element: JSX.Element) {
         <Main currentTab={path}>{element}</Main>,
         document.getElementById("main")
     );
+    document.title = makePathPrettyName(path, "LeafToRoot");
 }

@@ -42,6 +42,29 @@ renderPage(
                 <Link dst="mailto:timstr@cs.ubc.ca">ask me</Link> any questions
                 you have about my work.
             </p>
+            <p>Pronouns: he/him/his</p>
+        </Section>
+        <Section header={<h2>Links</h2>}>
+            <ul>
+                <li>
+                    <Link dst="https://github.com/timstr">GitHub</Link>
+                </li>
+                <li>
+                    <Link dst="https://soundcloud.com/timstraubinger">
+                        SoundCloud
+                    </Link>
+                </li>
+                <li>
+                    <Link dst="https://www.youtube.com/channel/UCzB2F3BBhsi3yY1HVP7--ow">
+                        YouTube
+                    </Link>
+                </li>
+                <li>
+                    <Link dst="https://stackoverflow.com/users/5023438/alter-igel">
+                        StackOverflow
+                    </Link>
+                </li>
+            </ul>
         </Section>
         <Section header={<h2>Resume</h2>}>
             <p>

@@ -53,9 +53,9 @@ const Pictures = [
 renderPage(
     ["fractals", "gallery"],
     <>
-        <div className="fractals">
+        <div className="img-gallery">
             {Pictures.map((img) => (
-                <ImageIcon key={img} image={"fractals/" + img} />
+                <ImageIcon key={img} image={"/fractals/" + img} />
             ))}
         </div>
     </>

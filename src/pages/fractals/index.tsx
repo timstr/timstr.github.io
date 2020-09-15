@@ -38,6 +38,18 @@ renderPage(
                         randomized order. This renderer is multi-threaded and
                         uses <Link dst="https://www.libsdl.org/">SDL</Link>.
                     </p>
+                    <p>
+                        The code for this is old and horrible and I shall not be
+                        releasing it. Sorry.
+                    </p>
+                    <p>
+                        Please nag me at{" "}
+                        <Link dst="mailto:timstr@cs.ubc.ca">
+                            timstr@cs.ubc.ca
+                        </Link>{" "}
+                        if you think I should make a better one and share it
+                        with the world.
+                    </p>
                 </>
             }
         >
@@ -134,6 +146,17 @@ renderPage(
                         image. Multi-threading can reduce the time
                         significantly, though the rendering time of these
                         fractals ranged from 2 minutes to 30 minutes.
+                    </p>
+                    <p>
+                        The code for this is old and horrible and I shall not be
+                        releasing it. Sorry.
+                    </p>
+                    <p>
+                        Please see my{" "}
+                        <LocalLink dst={["pathtracing"]}>
+                            work on path tracing
+                        </LocalLink>{" "}
+                        for newer 3D fractals.
                     </p>
                 </>
             }

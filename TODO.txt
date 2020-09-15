@@ -1,0 +1,11 @@
+- Add photos and explanation of CSGSA coffeehouse
+- Link to Imager and Vision lab sites
+- Link to UDLS?
+- Link to timstaipanserver.ca
+- Completely revise:
+    - Flosion
+    - fractals
+- Elaborate on:
+    - path tracer
+    - cellular automata
+    - physics engine

@@ -2,8 +2,8 @@
 // from file/folder names to display names
 const RootPaths = {
     index: "About Me",
-    abilities: "Abilities",
     flosion: "Flosion",
+    pathtracing: "Path Tracing",
     fractals: "Fractals",
     rigidbodydynamics: "Rigid Body Dynamics",
     cellularautomata: "Cellular Automata",
@@ -11,8 +11,8 @@ const RootPaths = {
 } as const;
 const AllRootPaths: (keyof typeof RootPaths)[] = [
     "index",
-    "abilities",
     "flosion",
+    "pathtracing",
     "fractals",
     "rigidbodydynamics",
     "cellularautomata",
@@ -31,6 +31,15 @@ const AllPathsInFlosion: (keyof typeof PathInFlosion)[] = [
     "howitworks",
     "implementation",
     "examples",
+    "gallery",
+];
+
+const PathInPathTracing = {
+    index: "About",
+    gallery: "Gallery",
+} as const;
+const AllPathsInPathTracing: (keyof typeof PathInPathTracing)[] = [
+    "index",
     "gallery",
 ];
 
@@ -73,7 +82,8 @@ const AllPathsInOther: (keyof typeof PathInOther)[] = [
 
 export type LocalPath =
     | ["index"]
-    | ["abilities"]
+    | ["pathtracing"]
+    | ["pathtracing", keyof typeof PathInPathTracing]
     | ["flosion"]
     | ["flosion", keyof typeof PathInFlosion]
     | ["fractals"]
@@ -83,16 +93,6 @@ export type LocalPath =
     | ["cellularautomata"]
     | ["other"]
     | ["other", keyof typeof PathInOther];
-
-// export const AllLocalPaths: LocalPath[] = ([
-//     ["index"],
-//     ["abilities"],
-// ] as LocalPath[])
-//     .concat(AllPathsInFlosion.map((x) => ["flosion", x]))
-//     .concat(AllPathsInFractals.map((x) => ["fractals", x]))
-//     .concat(AllPathsInRBD.map((x) => ["rigidbodydynamics", x]))
-//     .concat(["cellularautomata"])
-//     .concat(AllPathsInOther.map((x) => ["other", x]));
 
 // This may look ugly as heck, but if any of the above strings don't match
 // what's in the keysRootPaths, the following lines will cause an error
@@ -122,10 +122,10 @@ export function makePathFileName(
         }
         switch (path[0]) {
             case "index":
-            case "abilities":
             case "cellularautomata":
                 return path[0];
             case "flosion":
+            case "pathtracing":
             case "fractals":
             case "rigidbodydynamics":
             case "other":
@@ -145,8 +145,11 @@ export function getPathSiblings(path: LocalPath): LocalPath[][] {
     switch (path[0]) {
         case "index":
             return [rootPaths];
-        case "abilities":
-            return [rootPaths];
+        case "pathtracing":
+            return [
+                rootPaths,
+                AllPathsInPathTracing.map((x) => ["pathtracing", x]),
+            ];
         case "flosion":
             return [rootPaths, AllPathsInFlosion.map((x) => ["flosion", x])];
         case "fractals":
@@ -170,6 +173,8 @@ export function getPathHeadName(path: LocalPath): string {
     switch (path[0]) {
         case "flosion":
             return PathInFlosion[path[1]];
+        case "pathtracing":
+            return PathInPathTracing[path[1]];
         case "fractals":
             return PathInFractals[path[1]];
         case "rigidbodydynamics":
@@ -177,4 +182,38 @@ export function getPathHeadName(path: LocalPath): string {
         case "other":
             return PathInOther[path[1]];
     }
+}
+
+export function pathUpOne(path: LocalPath): LocalPath | null {
+    if (path.length === 1) {
+        return null;
+    }
+    return path.slice(0, path.length - 1) as LocalPath;
+}
+
+export function makePathPrettyName(
+    path: LocalPath,
+    dir: "RootToLeaf" | "LeafToRoot",
+    separator?: string | undefined,
+    rootName?: string | undefined
+): string {
+    if (separator === undefined) {
+        separator = " | ";
+    }
+    if (rootName === undefined) {
+        rootName = "Tim's Portfolio";
+    }
+    let p: LocalPath | null = path;
+    let names: string[] = [];
+    while (p !== null) {
+        names.push(getPathHeadName(p));
+        p = pathUpOne(p);
+    }
+    if (rootName !== "") {
+        names.push(rootName);
+    }
+    if (dir === "RootToLeaf") {
+        names = names.reverse();
+    }
+    return names.join(separator);
 }
