@@ -1,11 +1,11 @@
 import * as React from "react";
-import { renderPage } from "../../renderpage";
-import { Section, SubSection } from "../../components/Section";
-import { BigImage } from "../../components/BigImage";
-import { Link } from "../../components/Link";
+import { renderPage } from "../../../renderpage";
+import { Section, SubSection } from "../../../components/Section";
+import { BigImage } from "../../../components/BigImage";
+import { Link } from "../../../components/Link";
 
 renderPage(
-    ["flosion", "howitworks"],
+    ["audio", "flosion", "howitworks"],
     <>
         <h1>How Flosion Works</h1>
         <Section header={<h2>Overview</h2>}>

@@ -1,12 +1,12 @@
-import { renderPage } from "../../renderpage";
 import * as React from "react";
-import { Link, LocalLink } from "../../components/Link";
-import { Section } from "../../components/Section";
-import { ImageIcon } from "../../components/ImageIcon";
-import { LazyImage } from "../../components/LazyImage";
+import { ImageIcon } from "../../../components/ImageIcon";
+import { LazyImage } from "../../../components/LazyImage";
+import { Link, LocalLink } from "../../../components/Link";
+import { Section } from "../../../components/Section";
+import { renderPage } from "../../../renderpage";
 
 renderPage(
-    ["pathtracing", "index"],
+    ["graphics", "pathtracing", "index"],
     <>
         <h1>Path Tracing</h1>
         <Section header={<h2>What does it do</h2>}>
@@ -75,7 +75,9 @@ renderPage(
         <Section header={<h2>I need more</h2>}>
             <p>
                 Check out the{" "}
-                <LocalLink dst={["pathtracing", "gallery"]}>gallery</LocalLink>
+                <LocalLink dst={["graphics", "pathtracing", "gallery"]}>
+                    gallery
+                </LocalLink>
             </p>
         </Section>
         <Section header={<h2>Whaaat</h2>}>

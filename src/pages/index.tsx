@@ -30,9 +30,11 @@ renderPage(
             </p>
             <p>
                 I like to make{" "}
-                <LocalLink dst={["flosion"]}>music software</LocalLink>,{" "}
-                <LocalLink dst={["fractals"]}>fractals</LocalLink>, and{" "}
-                <LocalLink dst={["rigidbodydynamics"]}>
+                <LocalLink dst={["audio", "flosion"]}>music software</LocalLink>
+                ,{" "}
+                <LocalLink dst={["graphics", "fractals2d"]}>fractals</LocalLink>
+                , and{" "}
+                <LocalLink dst={["physics", "rigidbodydynamics"]}>
                     physics simulations
                 </LocalLink>{" "}
                 among other things.

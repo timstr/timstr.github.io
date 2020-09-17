@@ -1,6 +1,6 @@
-import { renderPage } from "../../renderpage";
+import { renderPage } from "../../../renderpage";
 import * as React from "react";
-import { ImageIcon } from "../../components/ImageIcon";
+import { ImageIcon } from "../../../components/ImageIcon";
 
 const Pictures = [
     "blockball03",
@@ -26,7 +26,7 @@ const Pictures = [
 ];
 
 renderPage(
-    ["pathtracing", "gallery"],
+    ["graphics", "pathtracing", "gallery"],
     <>
         <div className="img-gallery">
             {Pictures.map((img) => (

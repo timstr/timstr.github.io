@@ -3,7 +3,6 @@ import { Color, linearMix } from "../interfaces/Color";
 import { TabMenuItem } from "./TabMenuItem";
 import {
     LocalPath,
-    makePathFileName,
     getPathHeadName,
     getPathSiblings,
     pathContains,
@@ -24,11 +23,9 @@ const StaticTabMenu = (props: StaticTabMenuProps) => {
 
     const makeTabItem = (tab: LocalPath) => {
         const name = getPathHeadName(tab);
-        const url = makePathFileName(tab, "");
         return (
-            <LocalLink dst={tab}>
+            <LocalLink dst={tab} key={name}>
                 <TabMenuItem
-                    key={url}
                     active={pathContains(props.currentTab, tab)}
                     title={name}
                     color={tabColor}

@@ -1,12 +1,12 @@
 import * as React from "react";
-import { renderPage } from "../../renderpage";
-import { Section, SubSection } from "../../components/Section";
-import { BigImage } from "../../components/BigImage";
-import { Link } from "../../components/Link";
-import { SoundCloudPlayer } from "../../components/SoundCloudPlayer";
+import { renderPage } from "../../../renderpage";
+import { Section, SubSection } from "../../../components/Section";
+import { BigImage } from "../../../components/BigImage";
+import { Link } from "../../../components/Link";
+import { SoundCloudPlayer } from "../../../components/SoundCloudPlayer";
 
 renderPage(
-    ["flosion", "examples"],
+    ["audio", "flosion", "examples"],
     <>
         <h1>Examples</h1>
         <Section header={<h2>Preamble</h2>}>

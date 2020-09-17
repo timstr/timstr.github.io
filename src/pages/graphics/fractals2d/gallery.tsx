@@ -1,6 +1,6 @@
 import * as React from "react";
-import { renderPage } from "../../renderpage";
-import { ImageIcon } from "../../components/ImageIcon";
+import { renderPage } from "../../../renderpage";
+import { ImageIcon } from "../../../components/ImageIcon";
 
 /**
  * TODO:
@@ -51,7 +51,7 @@ const Pictures = [
 ];
 
 renderPage(
-    ["fractals", "gallery"],
+    ["graphics", "fractals2d", "gallery"],
     <>
         <div className="img-gallery">
             {Pictures.map((img) => (

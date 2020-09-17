@@ -1,10 +1,10 @@
 import * as React from "react";
-import { renderPage } from "../../renderpage";
-import { Section } from "../../components/Section";
-import { BigImage } from "../../components/BigImage";
+import { renderPage } from "../../../renderpage";
+import { Section } from "../../../components/Section";
+import { BigImage } from "../../../components/BigImage";
 
 renderPage(
-    ["flosion", "index"],
+    ["audio", "flosion", "index"],
     <>
         <h1>About Flosion</h1>
         <Section header={<h2>What is it?</h2>}>

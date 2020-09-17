@@ -1,8 +1,8 @@
 import * as React from "react";
-import { renderPage } from "../../renderpage";
-import { Section, SubSection } from "../../components/Section";
-import { Link } from "../../components/Link";
-import { CodeSnippet } from "../../components/CodeSyntax";
+import { renderPage } from "../../../renderpage";
+import { Section, SubSection } from "../../../components/Section";
+import { Link } from "../../../components/Link";
+import { CodeSnippet } from "../../../components/CodeSyntax";
 
 const NumberSourceSnippet = `struct NumberSource {
     virtual float evaluate(const State* state) = 0;
@@ -122,7 +122,7 @@ private:
 };`;
 
 renderPage(
-    ["flosion", "implementation"],
+    ["audio", "flosion", "implementation"],
     <>
         <h1>How Flosion Is Written</h1>
         <Section header={<h2>Implementation</h2>}>

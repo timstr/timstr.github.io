@@ -1,7 +1,7 @@
 import * as React from "react";
-import { renderPage } from "../../renderpage";
-import { Link } from "../../components/Link";
-import { SoundCloudPlayer } from "../../components/SoundCloudPlayer";
+import { renderPage } from "../../../renderpage";
+import { Link } from "../../../components/Link";
+import { SoundCloudPlayer } from "../../../components/SoundCloudPlayer";
 
 type RenderFunction = () => React.ReactNode;
 
@@ -144,7 +144,7 @@ const PlayList: Song[] = [
 ];
 
 renderPage(
-    ["flosion", "gallery"],
+    ["audio", "flosion", "gallery"],
     <>
         <h2>Songs Made using Flosion</h2>
         <div className="songlist">

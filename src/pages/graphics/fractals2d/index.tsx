@@ -1,10 +1,10 @@
 import * as React from "react";
-import { renderPage } from "../../renderpage";
-import { LocalLink, Link } from "../../components/Link";
-import { ImageIcon } from "../../components/ImageIcon";
-import { Section, SubSection } from "../../components/Section";
-import { YouTubePlayer } from "../../components/YouTubePlayer";
-import { CoolGifs } from "../../components/CoolGifs";
+import { renderPage } from "../../../renderpage";
+import { LocalLink, Link } from "../../../components/Link";
+import { ImageIcon } from "../../../components/ImageIcon";
+import { Section, SubSection } from "../../../components/Section";
+import { YouTubePlayer } from "../../../components/YouTubePlayer";
+import { CoolGifs } from "../../../components/CoolGifs";
 
 const FractalImages = (props: { names: string[] }) => (
     <div>
@@ -15,12 +15,14 @@ const FractalImages = (props: { names: string[] }) => (
 );
 
 renderPage(
-    ["fractals", "index"],
+    ["graphics", "fractals2d", "index"],
     <>
         <h1>About my fractals</h1>
         <p>
             More images are available in the{" "}
-            <LocalLink dst={["fractals", "gallery"]}>gallery</LocalLink>
+            <LocalLink dst={["graphics", "fractals2d", "gallery"]}>
+                gallery
+            </LocalLink>
         </p>
         <Section
             header={
@@ -153,7 +155,7 @@ renderPage(
                     </p>
                     <p>
                         Please see my{" "}
-                        <LocalLink dst={["pathtracing"]}>
+                        <LocalLink dst={["graphics", "pathtracing"]}>
                             work on path tracing
                         </LocalLink>{" "}
                         for newer 3D fractals.

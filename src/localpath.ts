@@ -1,104 +1,134 @@
-// NOTE: the meaning of the following embedded constants is mappings
-// from file/folder names to display names
-const RootPaths = {
-    index: "About Me",
-    flosion: "Flosion",
-    pathtracing: "Path Tracing",
-    fractals: "Fractals",
-    rigidbodydynamics: "Rigid Body Dynamics",
-    cellularautomata: "Cellular Automata",
-    other: "Other Projects",
-} as const;
-const AllRootPaths: (keyof typeof RootPaths)[] = [
-    "index",
-    "flosion",
-    "pathtracing",
-    "fractals",
-    "rigidbodydynamics",
-    "cellularautomata",
-    "other",
+// NOTE: the structure of this object is expected to match the path names of
+// files inside src/pages. For example:
+// src/pages/index.tsx corresponds to SiteTree.index
+// src/pages/audio/flosion/index.tsx corresponds to SiteTree.audio.flosion.index
+// These paths are represented as (type-checked!!!) arrays of keys into this object.
+// For example: ["indeX"] or ["audio", "flosion"] (equivalent to ["audio", "flosion", "index"])
+const SiteTree = [
+    "Tim's Portfolio",
+    {
+        index: "About Me",
+        blog: "Blog",
+        audio: [
+            "Audio",
+            {
+                flosion: [
+                    "Flosion",
+                    {
+                        index: "About",
+                        howitworks: "How It Works",
+                        implementation: "Implementation",
+                        examples: "Examples",
+                        gallery: "Song Gallery",
+                    },
+                ],
+            },
+        ],
+        graphics: [
+            "Graphics",
+            {
+                pathtracing: [
+                    "Path Tracing",
+                    { index: "About", gallery: "Gallery" },
+                ],
+                fractals2d: [
+                    "2D Fractals",
+                    { index: "About", gallery: "Gallery" },
+                ],
+                fractals3d: [
+                    "3D Fractals",
+                    { index: "About", gallery: "Gallery" },
+                ],
+                cellularautomata: "Cellular Automata",
+            },
+        ],
+        physics: [
+            "Physics",
+            {
+                rigidbodydynamics: [
+                    "Rigid Body Dynamics",
+                    {
+                        index: "Circle Box Stacking",
+                        boxchain: "Box Chain",
+                        frictiondemo: "Friction Demo",
+                        frictionlessboxes: "Frictionless Boxes",
+                        circlepile: "Circle Pile",
+                    },
+                ],
+            },
+        ],
+        games: ["Games", { index: "Tai Pan" }],
+        artwork: ["Artwork", { index: "Selected Works", gallery: "Gallery" }],
+        code: [
+            "Code",
+            {
+                index: "Tim's GUI",
+                neuralnetwork: "Neural Network",
+            },
+        ],
+    },
+] as const;
+
+type Node = LeafNode | NamedInternalNode;
+type LeafNode = string;
+type NamedInternalNode = readonly [string, InternalNode];
+type InternalNode = {
+    [i: string]: Node;
+};
+
+type Cons<H, T> = T extends readonly any[]
+    ? ((h: H, ...t: T) => void) extends (...r: infer R) => void
+        ? R
+        : never
+    : never;
+
+type Prev = [
+    never,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    ...0[]
 ];
 
-const PathInFlosion = {
-    index: "About",
-    howitworks: "How It Works",
-    implementation: "Implementation",
-    examples: "Examples",
-    gallery: "Song Gallery",
-} as const;
-const AllPathsInFlosion: (keyof typeof PathInFlosion)[] = [
-    "index",
-    "howitworks",
-    "implementation",
-    "examples",
-    "gallery",
-];
+type NodePath<T extends Node, D extends number = 10> = [D] extends [never]
+    ? never
+    : T extends readonly [any, InternalNode]
+    ? {
+          [K in keyof T[1]]-?:
+              | [K]
+              | (NodePath<T[1][K], Prev[D]> extends infer P
+                    ? P extends []
+                        ? never
+                        : Cons<K, P>
+                    : never);
+      }[keyof T[1]]
+    : [];
 
-const PathInPathTracing = {
-    index: "About",
-    gallery: "Gallery",
-} as const;
-const AllPathsInPathTracing: (keyof typeof PathInPathTracing)[] = [
-    "index",
-    "gallery",
-];
+////////////////////////
+export const __DoNotUse_SafetyCheck_A__ = (_: Node) => {};
+export const __DoNotUse_SafetyCheck_B__ = () =>
+    __DoNotUse_SafetyCheck_A__(SiteTree);
+////////////////////////
 
-const PathInFractals = {
-    index: "About",
-    gallery: "Gallery",
-} as const;
-const AllPathsInFractals: (keyof typeof PathInFractals)[] = [
-    "index",
-    "gallery",
-];
-
-const PathInRBD = {
-    index: "Circle Box Stacking",
-    boxchain: "Box Chain",
-    frictiondemo: "Friction Demo",
-    frictionlessboxes: "Frictionless Boxes",
-    circlepile: "Circle Pile",
-} as const;
-const AllPathsInRBD: (keyof typeof PathInRBD)[] = [
-    "index",
-    "boxchain",
-    "frictiondemo",
-    "frictionlessboxes",
-    "circlepile",
-];
-
-const PathInOther = {
-    index: "Tim's GUI",
-    platformer: "Platformer Game",
-    gibberishgenerators: "Gibberish Generator",
-    random: "Random",
-} as const;
-const AllPathsInOther: (keyof typeof PathInOther)[] = [
-    "index",
-    "platformer",
-    "gibberishgenerators",
-    "random",
-];
-
-export type LocalPath =
-    | ["index"]
-    | ["pathtracing"]
-    | ["pathtracing", keyof typeof PathInPathTracing]
-    | ["flosion"]
-    | ["flosion", keyof typeof PathInFlosion]
-    | ["fractals"]
-    | ["fractals", keyof typeof PathInFractals]
-    | ["rigidbodydynamics"]
-    | ["rigidbodydynamics", keyof typeof PathInRBD]
-    | ["cellularautomata"]
-    | ["other"]
-    | ["other", keyof typeof PathInOther];
-
-// This may look ugly as heck, but if any of the above strings don't match
-// what's in the keysRootPaths, the following lines will cause an error
-export const __DoNotUse_SafetyCheck_1__ = (_: keyof typeof RootPaths) => {};
-export const __DoNotUse_SafetyCheck_2__ = (p: LocalPath) =>
-    __DoNotUse_SafetyCheck_1__(p[0]);
+export type LocalPath = NodePath<typeof SiteTree>;
 
 export function pathContains(path: LocalPath, subPath: LocalPath): boolean {
     for (let i = 0; i < subPath.length; ++i) {
@@ -112,75 +142,64 @@ export function pathContains(path: LocalPath, subPath: LocalPath): boolean {
     return true;
 }
 
-export function makePathFileName(
-    path: LocalPath,
-    ext?: string | undefined
-): string {
-    const pathStr = ((): string => {
-        if (path.length === 2) {
-            return path[0] + "/" + path[1];
-        }
-        switch (path[0]) {
-            case "index":
-            case "cellularautomata":
-                return path[0];
-            case "flosion":
-            case "pathtracing":
-            case "fractals":
-            case "rigidbodydynamics":
-            case "other":
-                return path[0] + "/index";
-        }
-    })();
-    if (ext === undefined) {
-        ext = "html";
+export function makePathFileName(path: LocalPath): string {
+    let pp: string[] = path;
+    let n: any = SiteTree[1];
+    for (let p of path.slice(0, path.length - 1)) {
+        n = n[p][1];
     }
-    return "/" + pathStr + (ext === "" ? "" : "." + ext);
+    // n now is the parent InternalNode of the last item in the path
+
+    // v is the Node to which the path points
+    let v = n[path[path.length - 1]];
+
+    // If the final node is an internal node,
+    // search down the first branch until a leaf is found
+    while (Array.isArray(v)) {
+        v = v[1];
+        if (typeof v === "object") {
+            const k = Object.keys(v)[0];
+            pp.push(k);
+            v = v[k];
+        }
+    }
+    return "/" + pp.join("/") + ".html";
 }
 
 export function getPathSiblings(path: LocalPath): LocalPath[][] {
-    const rootPaths = AllRootPaths.map(
-        (x: keyof typeof RootPaths): LocalPath => [x] as LocalPath
-    );
-    switch (path[0]) {
-        case "index":
-            return [rootPaths];
-        case "pathtracing":
-            return [
-                rootPaths,
-                AllPathsInPathTracing.map((x) => ["pathtracing", x]),
-            ];
-        case "flosion":
-            return [rootPaths, AllPathsInFlosion.map((x) => ["flosion", x])];
-        case "fractals":
-            return [rootPaths, AllPathsInFractals.map((x) => ["fractals", x])];
-        case "rigidbodydynamics":
-            return [
-                rootPaths,
-                AllPathsInRBD.map((x) => ["rigidbodydynamics", x]),
-            ];
-        case "cellularautomata":
-            return [rootPaths];
-        case "other":
-            return [rootPaths, AllPathsInOther.map((x) => ["other", x])];
+    let out: LocalPath[][] = [];
+    let n: any = SiteTree[1];
+    let prefix: string[] = [];
+    for (let p of path) {
+        const keys = Object.keys(n);
+        out.push(keys.map((k) => prefix.concat([k])) as LocalPath[]);
+        prefix.push(p);
+        n = n[p];
+        if (typeof n === "string") {
+            n = null;
+        } else if (Array.isArray(n)) {
+            n = n[1];
+        }
     }
+    return out;
 }
 
 export function getPathHeadName(path: LocalPath): string {
-    if (path.length === 1) {
-        return RootPaths[path[0]];
+    let n: any = SiteTree[1];
+    for (let p of path.slice(0, path.length - 1)) {
+        n = n[p][1];
     }
-    switch (path[0]) {
-        case "flosion":
-            return PathInFlosion[path[1]];
-        case "pathtracing":
-            return PathInPathTracing[path[1]];
-        case "fractals":
-            return PathInFractals[path[1]];
-        case "rigidbodydynamics":
-            return PathInRBD[path[1]];
-        case "other":
-            return PathInOther[path[1]];
+    // n now is the parent InternalNode of the last item in the path
+
+    // v is the Node to which the path points
+    const v = n[path[path.length - 1]];
+
+    if (typeof v === "string") {
+        // the final node is a leaf
+        return v;
+    } else {
+        // the final node is a named internal node
+        return v[0];
     }
 }
 

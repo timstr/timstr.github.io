@@ -11,7 +11,7 @@ import { ImageIcon } from "../../components/ImageIcon";
  */
 
 renderPage(
-    ["other", "index"],
+    ["code", "index"],
     <>
         <h1>Tim's GUI</h1>
         <h4>Coming soon</h4>
@@ -21,7 +21,7 @@ renderPage(
             my Tim's GUI library, which uses a similar box model and flow
             algorithm to HTML and CSS. Spot the difference!
         </p>
-        <ImageIcon image="confuciuswikipedia" />
-        <ImageIcon image="confuciustimsgui" />
+        <ImageIcon image="other/confuciuswikipedia" />
+        <ImageIcon image="other/confuciustimsgui" />
     </>
 );
