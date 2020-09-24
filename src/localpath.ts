@@ -8,7 +8,6 @@ const SiteTree = [
     "Tim's Portfolio",
     {
         index: "About Me",
-        blog: "Blog",
         audio: [
             "Audio",
             {
@@ -36,7 +35,7 @@ const SiteTree = [
                     { index: "About", gallery: "Gallery" },
                 ],
                 fractals3d: [
-                    "3D Fractals",
+                    "3D Fractals (Old)",
                     { index: "About", gallery: "Gallery" },
                 ],
                 cellularautomata: "Cellular Automata",
@@ -62,10 +61,11 @@ const SiteTree = [
         code: [
             "Code",
             {
-                index: "Tim's GUI",
+                index: "OFC (GUI Framework)",
                 neuralnetwork: "Neural Network",
             },
         ],
+        personal: "Personal Stuff",
     },
 ] as const;
 

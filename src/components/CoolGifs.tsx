@@ -4,6 +4,8 @@ import { LazyImage } from "./LazyImage";
 import { Link } from "./Link";
 import { DynamicTabMenu } from "./DynamicTabMenu";
 
+// TODO: delete this file if it remains unused
+
 interface GifProps {
     name: string;
     title: string;

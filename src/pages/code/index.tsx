@@ -1,27 +1,16 @@
 import { renderPage } from "../../renderpage";
 import * as React from "react";
-import { ImageIcon } from "../../components/ImageIcon";
-
-/**
- * TODO:
- *  - explanation, design overview
- *  - brief history
- *  - inspiration from HTML / CSS
- *  - github link
- */
+import { Link } from "../../components/Link";
 
 renderPage(
     ["code", "index"],
     <>
-        <h1>Tim's GUI</h1>
-        <h4>Coming soon</h4>
+        <h1>OFC - Objects and Functional Components</h1>
+        <h2>A cross-platform GUI Framework using C++ and SFML</h2>
+        <p>More on this later.</p>
         <p>
-            The first image is Wikipedia's article on Confucius, as viewed in
-            Google Chrome. The right image is my recreation of the article using
-            my Tim's GUI library, which uses a similar box model and flow
-            algorithm to HTML and CSS. Spot the difference!
+            The source code is available on{" "}
+            <Link dst="https://github.com/timstr/OFC">GitHub</Link>.
         </p>
-        <ImageIcon image="other/confuciuswikipedia" />
-        <ImageIcon image="other/confuciustimsgui" />
     </>
 );

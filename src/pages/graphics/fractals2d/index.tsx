@@ -1,23 +1,15 @@
 import * as React from "react";
 import { renderPage } from "../../../renderpage";
 import { LocalLink, Link } from "../../../components/Link";
-import { ImageIcon } from "../../../components/ImageIcon";
-import { Section, SubSection } from "../../../components/Section";
+import { ImageIcon, ListOfImageIcons } from "../../../components/ImageIcon";
+import { Section } from "../../../components/Section";
 import { YouTubePlayer } from "../../../components/YouTubePlayer";
-import { CoolGifs } from "../../../components/CoolGifs";
-
-const FractalImages = (props: { names: string[] }) => (
-    <div>
-        {props.names.map((str) => (
-            <ImageIcon image={"fractals/" + str} key={str} />
-        ))}
-    </div>
-);
+import { BigImage } from "../../../components/BigImage";
 
 renderPage(
     ["graphics", "fractals2d", "index"],
     <>
-        <h1>About my fractals</h1>
+        <h1>2D Fractals</h1>
         <p>
             More images are available in the{" "}
             <LocalLink dst={["graphics", "fractals2d", "gallery"]}>
@@ -58,7 +50,7 @@ renderPage(
             <h4>Fractals in Action</h4>
             <YouTubePlayer ytid="u90snpqoBxA" width={600} height={450} />
             <p>
-                A fractal that was saved during this screen recording is
+                ; A fractal that was saved during this screen recording is
                 available below.
             </p>
             <ImageIcon image="fractals/examplemandelbox" />
@@ -94,8 +86,9 @@ renderPage(
                 </>
             }
         >
-            <FractalImages
-                names={[
+            <ListOfImageIcons
+                folderName="fractals"
+                fileNames={[
                     "particleaccelerator",
                     "tree",
                     "berryshake",
@@ -123,87 +116,11 @@ renderPage(
                 </>
             }
         >
-            <FractalImages
-                names={["algae", "cauliflower", "oilfilm", "saturn"]}
+            <ListOfImageIcons
+                folderName="fractals"
+                fileNames={["algae", "cauliflower", "oilfilm", "saturn"]}
             />
-        </Section>
-
-        <Section
-            header={
-                <>
-                    <h2>3D Fractals</h2>
-                    <p>
-                        Here, I implemented a CPU-based{" "}
-                        <Link dst="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">
-                            ray-tracer
-                        </Link>{" "}
-                        in C++, which simulates paths of light through space as
-                        they collide with the computed fractal geometry. For 3D
-                        fractals, whose shape is complicated and chaotic, these
-                        light paths need to take lots of very small steps to
-                        avoid skipping right through parts of the fractal. These
-                        small step sizes make this kind of ray tracing
-                        computationally expensive, especially when done many
-                        times per pixel, for a million pixels, just for a single
-                        image. Multi-threading can reduce the time
-                        significantly, though the rendering time of these
-                        fractals ranged from 2 minutes to 30 minutes.
-                    </p>
-                    <p>
-                        The code for this is old and horrible and I shall not be
-                        releasing it. Sorry.
-                    </p>
-                    <p>
-                        Please see my{" "}
-                        <LocalLink dst={["graphics", "pathtracing"]}>
-                            work on path tracing
-                        </LocalLink>{" "}
-                        for newer 3D fractals.
-                    </p>
-                </>
-            }
-        >
-            <FractalImages
-                names={["mandelbox4", "mandelbox3", "mandelbox1", "mandelbox2"]}
-            />
-            <SubSection>
-                <p>
-                    I've also used the same ray-tracing algorithm to render
-                    other things, like voxel clouds and octrees.
-                </p>
-                <FractalImages
-                    names={["cubes1", "cubes2", "octree", "voxelplanet"]}
-                />
-            </SubSection>
-        </Section>
-
-        <Section
-            header={
-                <>
-                    <h2>3D Fractals (GLSL)</h2>
-                    <p>
-                        These fractals were implemented using a similar ray
-                        tracing algorithm to that described above, though
-                        instead of running on the CPU, these ones were
-                        implemented in GLSL and ran on the GPU. The lighting is
-                        done using the Blinn-Phong shading model, for which a
-                        local estimate of curvate was computed to generate a
-                        surface normal.
-                    </p>
-                    <p>
-                        Note: while this renderer ran significantly faster than
-                        the CPU-based ray-tracer, the FPS counter in the
-                        top-left corner is rounded up. In actuality, the speed
-                        was about 5 to 10 seconds per frame at full-screen.
-                    </p>
-                </>
-            }
-        >
-            <FractalImages names={["glbox1", "glbox2"]} />
-        </Section>
-
-        <Section header={<h2>Animated</h2>}>
-            <CoolGifs />
+            <BigImage name="fractals/gooflow.gif" />
         </Section>
     </>
 );

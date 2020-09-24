@@ -5,9 +5,9 @@ import { Section, SubSection } from "../components/Section";
 import { renderPage } from "../renderpage";
 
 renderPage(
-    ["blog"],
+    ["personal"],
     <>
-        <h1>Blag</h1>
+        <h1>Personal Stuff</h1>
         <Section
             header={
                 <>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { BigImage } from "../../../components/BigImage";
 import { ImageIcon } from "../../../components/ImageIcon";
 import { LazyImage } from "../../../components/LazyImage";
 import { Link, LocalLink } from "../../../components/Link";
@@ -9,6 +10,7 @@ renderPage(
     ["graphics", "pathtracing", "index"],
     <>
         <h1>Path Tracing</h1>
+        <BigImage name="pathtracing/blockball05" />
         <Section header={<h2>What does it do</h2>}>
             <h4>It makes pretty pictures.</h4>
             <p>
