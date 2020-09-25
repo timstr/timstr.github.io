@@ -68,7 +68,7 @@ pre {
 }
 
 .intromain {
-    background-image: url("img/fractalbg.png");
+    background-image: url("/static/img/fractalbg.png");
     background-position: center;
     min-height: 436px;
     position: relative;
@@ -189,8 +189,10 @@ pre {
 .pieceicon-img {
     cursor: pointer;
     margin: 5px;
-    width: 190px;
-    height: 190px;
+    max-width: 190px;
+    max-height: 190px;
+    width: auto;
+    height: auto;
     box-shadow: 0px 0px 0px transparent;
     border-radius: 10px;
     overflow: hidden;
@@ -198,8 +200,10 @@ pre {
 }
 .pieceicon-img:hover {
     margin: 0px;
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
     box-shadow: 0px 5px 20px #00000080;
     border-radius: 0px;
 }
@@ -253,6 +257,17 @@ pre {
 .bigimage-img {
     width: 100%;
     max-width: 700px;
+}
+
+.actualsizeimage {
+    max-width: 100%;
+    height: auto;
+    margin: 5px;
+    align-content: center;
+}
+.actualsizeimage-img {
+    max-width: 100%;
+    height: auto;
 }
 
 .codesnippet {
