@@ -22,8 +22,16 @@ renderPage(
                 </Link>
                 , under the supervision of{" "}
                 <Link dst="https://www.robertxiao.ca/">Robert Xiao</Link> and{" "}
-                <Link dst="http://helge.rhodin.de/">Helge Rhodin</Link>. When
-                I'm not biking or exploring nature, I like to create my own
+                <Link dst="http://helge.rhodin.de/">Helge Rhodin</Link>, with{" "}
+                <Link dst="https://www.cs.ubc.ca/labs/imager/imager.php">
+                    Imager Lab
+                </Link>{" "}
+                and the{" "}
+                <Link dst="https://vision.cs.ubc.ca/">Computer Vision Lab</Link>
+                .
+            </p>
+            <p>
+                When I'm not biking or exploring nature, I like to create my own
                 worlds, usually with software, sometimes with Lego. Most of my
                 software projects revolve around trying to emulate organic chaos
                 and complexity of one form or another.
@@ -32,7 +40,9 @@ renderPage(
                 I like to make{" "}
                 <LocalLink dst={["audio", "flosion"]}>music software</LocalLink>
                 ,{" "}
-                <LocalLink dst={["graphics", "fractals2d"]}>fractals</LocalLink>
+                <LocalLink dst={["graphics"]}>
+                    3D renderings and fractals
+                </LocalLink>
                 , and{" "}
                 <LocalLink dst={["physics", "rigidbodydynamics"]}>
                     physics simulations

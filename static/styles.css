@@ -259,6 +259,17 @@ pre {
     max-width: 700px;
 }
 
+.actualsizeimage {
+    max-width: 100%;
+    height: auto;
+    margin: 5px;
+    align-content: center;
+}
+.actualsizeimage-img {
+    max-width: 100%;
+    height: auto;
+}
+
 .codesnippet {
     color: #cecece;
     background-color: #2b2b2b;

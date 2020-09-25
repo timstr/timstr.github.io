@@ -45,5 +45,56 @@ renderPage(
                 </p>{" "}
             </SubSection>
         </Section>
+        <Section
+            header={
+                <>
+                    <h1>UDLS - C++ Roast</h1>
+                    <p>January 24th, 2020</p>
+                </>
+            }
+        >
+            <p>
+                I gave an{" "}
+                <Link dst="https://www.cs.ubc.ca/~udls/">
+                    Undistinguished Lecture
+                </Link>{" "}
+                on the dangers and idiosyncracies of the C++ programming
+                language.
+            </p>
+            <BigImage name="udls_cpproast" />
+            <p>
+                The abstract and slides are available{" "}
+                <Link dst="https://www.cs.ubc.ca/~udls/showTalk.php/2020-01-24">
+                    here
+                </Link>
+                .
+            </p>
+        </Section>
+        <Section
+            header={
+                <>
+                    <h1>UDLS - German Fairy Tales</h1>
+                    <p>November 22nd, 2019</p>
+                </>
+            }
+        >
+            <p>
+                I gave an{" "}
+                <Link dst="https://www.cs.ubc.ca/~udls/">
+                    Undistinguished Lecture
+                </Link>{" "}
+                on the fairy tales of the Brothers Grimm (<em>Cinderella</em>,{" "}
+                <em>Rapunzel</em>, <em>Snow White</em>, etc) and Heinrich
+                Hoffmann (<em>Struwwelpeter</em> - ask your nearest German).
+            </p>
+            <BigImage name="udls_germanfairytales" />
+            <p>
+                The abstract and slides are available{" "}
+                <Link dst="https://www.cs.ubc.ca/~udls/showTalk.php/2019-11-22">
+                    here
+                </Link>
+                .
+            </p>
+        </Section>
     </>
 );

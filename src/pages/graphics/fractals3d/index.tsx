@@ -74,6 +74,7 @@ renderPage(
         <Section header={<h2>Animated</h2>}>
             <TabbedImages
                 folderName="fractals"
+                actualSize
                 images={[
                     { fileName: "flying.gif", title: "Flying" },
                     {
