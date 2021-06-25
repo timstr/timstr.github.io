@@ -28,7 +28,8 @@ renderPage(
                 </Link>{" "}
                 and the{" "}
                 <Link dst="https://vision.cs.ubc.ca/">Computer Vision Lab</Link>
-                .
+                , where I work on acoustic reconstruction using machine learning
+                and wave simulation.
             </p>
             <p>
                 When I'm not biking or exploring nature, I like to create my own

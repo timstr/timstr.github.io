@@ -1,0 +1,54 @@
+import * as React from "react";
+import { renderPage } from "../../../renderpage";
+import { YouTubePlayer } from "../../../components/YouTubePlayer";
+import { Section } from "../../../components/Section";
+
+renderPage(
+    ["physics", "rigidbodydynamics", "circleboxstacking"],
+    <>
+        <Section
+            header={
+                <>
+                    <h1>Stacking Circles and Boxes</h1>
+                    <p>
+                        Here we see a random assortment of circles and
+                        rectangles placed in a uniform rectangular grid. Each
+                        wall is an additional immoveable rectangle. Detected
+                        collisions are illustrated using a combination of small
+                        blue lines pointing along the collision normal, as well
+                        as red circles whose radii are proportional to the
+                        collision depths.
+                    </p>
+                    <p>
+                        Visualizing collisions and their properties like this
+                        was extremely helpful during debugging, and I strongly
+                        recommend doing so to anyone writing their own
+                        simulator.
+                    </p>
+                    <p>
+                        Note that when two rectangles collide along an entire
+                        edge, there are a total of two collisions detected at
+                        both ends of the colliding region. This design choice,
+                        allowing multiple collisions between pairs of bodies,
+                        leads to greatly improved stability when using the
+                        Sequential Impulses Method. Otherwise, one needs to find
+                        a single point along the colliding edges at which to
+                        place a correcting impulse, and all my best attempts to
+                        do this resulted in unstable oscillations. With multiple
+                        collision points, it becomes far more natural to support
+                        edge-edge collisions while remaining stable.
+                    </p>
+                    <p>
+                        The obstacles here eventually fall, not because of
+                        instabilities or inaccuracies in the simulation, but
+                        because of random initial offsets that were deliberately
+                        added during positioning. Without these offsets, the
+                        obstacles come to a rest without falling.
+                    </p>
+                </>
+            }
+        >
+            <YouTubePlayer ytid="Q2xi2WWNEec" width={1000} height={700} />
+        </Section>
+    </>
+);

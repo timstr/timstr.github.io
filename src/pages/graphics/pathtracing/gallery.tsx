@@ -19,6 +19,7 @@ const Pictures = [
     "mandelbulbtoplit",
     "mandelbulbtopglass",
     "mandelbulbwhole",
+    "negativelight",
     "randomspheres",
     "refraction",
     "refractionnoglass",

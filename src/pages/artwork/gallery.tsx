@@ -23,6 +23,7 @@ const Pictures = [
     "livechicken.jpg",
     "scooter.jpg",
     "snooter.jpg",
+    "snowhut.jpg",
     "sonflower.jpg",
     "treebirdplanes.jpg",
     "treee.jpg",

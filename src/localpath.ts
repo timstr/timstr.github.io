@@ -3,11 +3,22 @@
 // src/pages/index.tsx corresponds to SiteTree.index
 // src/pages/audio/flosion/index.tsx corresponds to SiteTree.audio.flosion.index
 // These paths are represented as (type-checked!!!) arrays of keys into this object.
-// For example: ["indeX"] or ["audio", "flosion"] (equivalent to ["audio", "flosion", "index"])
+// For example: ["index"] or ["audio", "flosion"] (equivalent to ["audio", "flosion", "index"])
 const SiteTree = [
     "Tim's Portfolio",
     {
         index: "About Me",
+        machine_learning: [
+            "Machine Learning",
+            {
+                index: "List of Projects",
+                graph_merging: "Differentiable Graph Merging",
+                monocamlegoslam: "Line Segment SLAM",
+                boneless: "Soft-Bodied Locomotion",
+                hand_gesture_recognition: "Hand Gesture Recognition",
+                hand_gesture_synthesis: "Hand Gesture Synthesis",
+            },
+        ],
         audio: [
             "Audio",
             {
@@ -47,25 +58,34 @@ const SiteTree = [
                 rigidbodydynamics: [
                     "Rigid Body Dynamics",
                     {
-                        index: "Circle Box Stacking",
+                        index: "About",
+                        circleboxstacking: "Circle Box Stacking",
                         boxchain: "Box Chain",
                         frictiondemo: "Friction Demo",
                         frictionlessboxes: "Frictionless Boxes",
                         circlepile: "Circle Pile",
+                        images: "Images",
                     },
                 ],
             },
         ],
-        games: ["Games", { index: "Tai Pan" }],
-        artwork: ["Artwork", { index: "Selected Works", gallery: "Gallery" }],
-        code: [
-            "Code",
+        artwork: [
+            "Artwork",
             {
-                index: "OFC (GUI Framework)",
-                neuralnetwork: "Neural Network",
+                index: "Selected Works",
+                gallery: "Gallery",
+                ti84plus: "TI-84 Plus Graphing Calculator",
             },
         ],
-        personal: "Personal Stuff",
+        personal: [
+            "Personal Stuff",
+            {
+                index: "Tim Doing Things",
+                taipan: "Tai Pan Server",
+                mushrooms: "Mushroom Photography",
+                recipes: "Recipes",
+            },
+        ],
     },
 ] as const;
 
