@@ -172,18 +172,19 @@ renderPage(
             </p>
         </Section>
         <Section header={<h2>Signed Distance Fields</h2>}>
-            My path tracer allows simple geometric solids and signed distance
-            fields to coexist in the same scene. Signed distance fields are fun
-            because while they can describe simple shapes, they can also be used
-            to render fractals, such as the mandelbulb, on the fly. Ray
-            intersect tests are performed using ray marching, and surface
-            normals are computed using finite differences. The same materials
-            used on basic shapes above can also be used here, at no extra cost.
             <p>
-                <ImageIcon image="pathtracing/mandelbulbwhole" />
-                <ImageIcon image="pathtracing/mandelbulbtoplit" />
-                <ImageIcon image="pathtracing/mandelbulbtopglass" />
+                My path tracer allows simple geometric solids and signed
+                distance fields to coexist in the same scene. Signed distance
+                fields are fun because while they can describe simple shapes,
+                they can also be used to render fractals, such as the
+                mandelbulb, on the fly. Ray intersect tests are performed using
+                ray marching, and surface normals are computed using finite
+                differences. The same materials used on basic shapes above can
+                also be used here, at no extra cost.
             </p>
+            <ImageIcon image="pathtracing/mandelbulbwhole" />
+            <ImageIcon image="pathtracing/mandelbulbtoplit" />
+            <ImageIcon image="pathtracing/mandelbulbtopglass" />
         </Section>
         <Section header={<h2>Fun/Weird Stuff</h2>}>
             <p>
@@ -191,7 +192,7 @@ renderPage(
                 beside each other, next to some glowing and green and blue
                 spheres.
             </p>
-            <p>(warning: large file)</p>
+            <p>(large image - 4.6 MB)</p>
             <p>
                 <ImageIcon image="pathtracing/fractalreflections" />
             </p>

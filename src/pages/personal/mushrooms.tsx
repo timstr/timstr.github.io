@@ -1,6 +1,7 @@
 import * as React from "react";
 import { BigImage } from "../../components/BigImage";
 import { ListOfImageIcons } from "../../components/ImageIcon";
+import { Link } from "../../components/Link";
 import { Section, SubSection } from "../../components/Section";
 import { renderPage } from "../../renderpage";
 
@@ -13,7 +14,7 @@ renderPage(
             <BigImage name="mushrooms/amanitasp1.jpg" />
             <SubSection>
                 <h3>
-                    <em>Amanita muscaria</em>
+                    <em>Amanita muscaria var. flavivolvata</em>
                 </h3>
                 <ListOfImageIcons
                     folderName="mushrooms"
@@ -28,7 +29,7 @@ renderPage(
         </Section>
         <Section header={<h1>Giant Puffball</h1>}>
             <h3>
-                <em>Calvatia gigantea</em>
+                <em>Calvatia booniana</em>
             </h3>
             <BigImage name="mushrooms/giantpuffball1.jpg" />
             <BigImage name="mushrooms/giantpuffball2.jpg" />
@@ -56,15 +57,15 @@ renderPage(
             </h3>
             <BigImage name="mushrooms/coralline.jpg" />
         </Section>
-        <Section header={<h1>Blue-bruising bolete</h1>}>
+        <Section header={<h1>Red-cracked bolete</h1>}>
             <h3>
-                <em>Boletus subtomentosus</em>
+                <em>Xerocomellus diffractus</em>
             </h3>
-            <BigImage name="mushrooms/boletussubtomentosus.jpg" />
+            <BigImage name="mushrooms/redcrackedbolete.jpg" />
         </Section>
         <Section header={<h1>False morel</h1>}>
             <h3>
-                <em>Helvella lacunosa</em>
+                <em>Helvella vespertina</em>
             </h3>
             <BigImage name="mushrooms/falsemorel.jpg" />
         </Section>
@@ -74,5 +75,11 @@ renderPage(
             </h3>
             <BigImage name="mushrooms/sulfurtuft.jpg" />
         </Section>
+        <p>
+            <Link dst="https://www.inaturalist.org/people/alter_igel">
+                Follow me on iNaturalist
+            </Link>{" "}
+            for more
+        </p>
     </>
 );

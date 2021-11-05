@@ -73,6 +73,11 @@ renderPage(
                     </Link>
                 </li>
                 <li>
+                    <Link dst="https://www.inaturalist.org/people/alter_igel">
+                        iNaturalist
+                    </Link>
+                </li>
+                <li>
                     <Link dst="https://www.youtube.com/channel/UCzB2F3BBhsi3yY1HVP7--ow">
                         YouTube
                     </Link>
@@ -86,8 +91,8 @@ renderPage(
         </Section>
         <Section header={<h2>Resume</h2>}>
             <p>
-                Click <Link dst="/static/TimStraubingerCV.pdf">here</Link> for
-                my resume.
+                Click <Link dst="/static/TimStraubingerResume.pdf">here</Link>{" "}
+                for my resume.
             </p>
         </Section>
         <Section header={<h2>Contact Me</h2>}>
