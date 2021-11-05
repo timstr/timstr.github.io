@@ -15,8 +15,7 @@ renderPage(
         </div>
         <Section header={<h2>Bio</h2>}>
             <p>
-                I'm currently studying for a master's degree in computer science
-                at the{" "}
+                I'm an MSc. student at the{" "}
                 <Link dst="https://www.cs.ubc.ca/">
                     University of British Columbia
                 </Link>
@@ -28,14 +27,20 @@ renderPage(
                 </Link>{" "}
                 and the{" "}
                 <Link dst="https://vision.cs.ubc.ca/">Computer Vision Lab</Link>
-                , where I work on acoustic reconstruction using machine learning
-                and wave simulation.
+                , where I work on{" "}
+                <LocalLink
+                    dst={["machine_learning", "acoustic_reconstruction"]}
+                >
+                    {" "}
+                    acoustic reconstruction using machine learning and wave
+                    simulation.
+                </LocalLink>
             </p>
             <p>
                 When I'm not biking or exploring nature, I like to create my own
                 worlds, usually with software, sometimes with Lego. Most of my
-                software projects revolve around trying to emulate organic chaos
-                and complexity of one form or another.
+                software projects revolve around trying to capture or emulate
+                organic complexity and chaos of one form or another.
             </p>
             <p>
                 I like to make{" "}

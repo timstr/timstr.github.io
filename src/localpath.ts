@@ -12,8 +12,8 @@ const SiteTree = [
             "Machine Learning",
             {
                 index: "List of Projects",
+                acoustic_reconstruction: "Acoustic Reconstruction",
                 graph_merging: "Differentiable Graph Merging",
-                monocamlegoslam: "Line Segment SLAM",
                 boneless: "Soft-Bodied Locomotion",
                 hand_gesture_recognition: "Hand Gesture Recognition",
                 hand_gesture_synthesis: "Hand Gesture Synthesis",

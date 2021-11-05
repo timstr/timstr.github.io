@@ -10,13 +10,17 @@ renderPage(
             <pre>// TODO</pre>
             <ul>
                 <li>
-                    <LocalLink dst={["machine_learning", "graph_merging"]}>
-                        Differentiable Graph Merging
-                    </LocalLink>
+                    <LocalLink
+                        dst={["machine_learning", "acoustic_reconstruction"]}
+                    >
+                        Learned Acoustic Reconstructing using Synthetic Aperture
+                        Focusing
+                    </LocalLink>{" "}
+                    - <em>MSc. Thesis</em>
                 </li>
                 <li>
-                    <LocalLink dst={["machine_learning", "monocamlegoslam"]}>
-                        Line Segment SLAM
+                    <LocalLink dst={["machine_learning", "graph_merging"]}>
+                        Differentiable Graph Merging
                     </LocalLink>
                 </li>
                 <li>
