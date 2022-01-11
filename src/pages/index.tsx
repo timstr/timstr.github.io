@@ -15,7 +15,15 @@ renderPage(
         </div>
         <Section header={<h2>Bio</h2>}>
             <p>
-                I'm an MSc. student at the{" "}
+                I'm currently a software developer developer at{" "}
+                <Link dst="https://www.vitalmechanics.com/">
+                    Vital Mechanics Research
+                </Link>
+                , working on garment and soft tissue simulation.
+            </p>
+            <p>
+                Previously, I received my master's degree in Computer Science at
+                the{" "}
                 <Link dst="https://www.cs.ubc.ca/">
                     University of British Columbia
                 </Link>
@@ -27,7 +35,7 @@ renderPage(
                 </Link>{" "}
                 and the{" "}
                 <Link dst="https://vision.cs.ubc.ca/">Computer Vision Lab</Link>
-                , where I work on{" "}
+                , where I worked on{" "}
                 <LocalLink
                     dst={["machine_learning", "acoustic_reconstruction"]}
                 >
@@ -57,8 +65,8 @@ renderPage(
             </p>
             <p>
                 Take a look around. Please{" "}
-                <Link dst="mailto:timstr@cs.ubc.ca">ask me</Link> any questions
-                you have about my work.
+                <Link dst="mailto:straubinger.tim@gmail.com.ca">ask me</Link>{" "}
+                any questions you have about my work.
             </p>
             <p>Pronouns: he/him/his</p>
         </Section>
