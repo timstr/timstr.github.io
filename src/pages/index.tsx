@@ -15,11 +15,11 @@ renderPage(
         </div>
         <Section header={<h2>Bio</h2>}>
             <p>
-                I'm currently a software developer developer at{" "}
-                <Link dst="https://www.vitalmechanics.com/">
-                    Vital Mechanics Research
+                I'm currently a production engineer at{" "}
+                <Link dst="https://www.ilm.com/">
+                    Industrial Light &amp; Magic
                 </Link>
-                , working on garment and soft tissue simulation.
+                , working in VFX R&amp;D.
             </p>
             <p>
                 Previously, I received my master's degree in Computer Science at
@@ -43,6 +43,13 @@ renderPage(
                     acoustic reconstruction using machine learning and wave
                     simulation.
                 </LocalLink>
+            </p>
+            <p>
+                I have also worked at{" "}
+                <Link dst="https://www.vitalmechanics.com/">
+                    Vital Mechanics Research
+                </Link>
+                , working on garment and soft tissue simulation.
             </p>
             <p>
                 When I'm not biking or exploring nature, I like to create my own
