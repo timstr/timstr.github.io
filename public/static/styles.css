@@ -131,9 +131,14 @@ pre {
     cursor: pointer;
 }
 .tabmenuitem {
+    background-color: rgb(177, 177, 196);
+}
+.tabmenuitem-active {
+    background-color: rgb(255, 255, 255);
+}
+.tabmenuitem {
     top: 0px;
-    transition: box-shadow 0.25s, background-color 0.25s, height 0.25s,
-        top 0.25s;
+    transition: box-shadow 0.25s, background-color 0.25s, height 0.25s, top 0.25s;
 }
 .tabmenuitem:hover {
     top: -5px;

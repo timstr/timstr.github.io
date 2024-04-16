@@ -1,0 +1,24 @@
+<tabmenu>
+    <tabmenuitem path="/graphics/pathtracing/" title="Path Tracing" />
+    <tabmenuitem path="/graphics/fractals2d/" title="2D Fractals" />
+    <tabmenuitem path="/graphics/fractals3d/" title="3D Fractals (Old)" />
+    <tabmenuitem path="/graphics/cellularautomata.html" title="Cellular Automata" />
+</tabmenu>
+
+<if self.filepath="/graphics/pathtracing/.*">
+    <then>
+        <pathtracingtabmenu />
+    </then>
+</if>
+
+<if self.filepath="/graphics/fractals2d/.*">
+    <then>
+        <fractals2dtabmenu />
+    </then>
+</if>
+
+<if self.filepath="/graphics/fractals3d/.*">
+    <then>
+        <fractals3dtabmenu />
+    </then>
+</if>

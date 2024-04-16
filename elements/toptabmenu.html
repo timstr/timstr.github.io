@@ -1,35 +1,45 @@
-<div class="tabmenu-list">
-    <a href="/index.html"
-        ><div
-            class="tabmenuitem-active"
-            style="background-color: rgb(255, 255, 255)"
-        >
-            <span class="tabmenuitem-title">About Me</span>
-        </div></a
-    >
-    <a href="/machine_learning/index.html"
-        ><div class="tabmenuitem" style="background-color: rgb(177, 177, 196)">
-            <span class="tabmenuitem-title">Machine Learning</span>
-        </div></a
-    ><a href="/audio/flosion/index.html"
-        ><div class="tabmenuitem" style="background-color: rgb(177, 177, 196)">
-            <span class="tabmenuitem-title">Audio</span>
-        </div></a
-    ><a href="/graphics/pathtracing/index.html"
-        ><div class="tabmenuitem" style="background-color: rgb(177, 177, 196)">
-            <span class="tabmenuitem-title">Graphics</span>
-        </div></a
-    ><a href="/physics/rigidbodydynamics/index.html"
-        ><div class="tabmenuitem" style="background-color: rgb(177, 177, 196)">
-            <span class="tabmenuitem-title">Physics</span>
-        </div></a
-    ><a href="/artwork/index.html"
-        ><div class="tabmenuitem" style="background-color: rgb(177, 177, 196)">
-            <span class="tabmenuitem-title">Artwork</span>
-        </div></a
-    ><a href="/personal/index.html"
-        ><div class="tabmenuitem" style="background-color: rgb(177, 177, 196)">
-            <span class="tabmenuitem-title">Personal Stuff</span>
-        </div></a
-    >
-</div>
+<tabmenu>
+    <tabmenuitem path="/index.html" title="About Me" />
+    <tabmenuitem path="/machine_learning" title="Machine Learning" />
+    <tabmenuitem path="/audio" title="Audio" />
+    <tabmenuitem path="/graphics" title="Graphics" />
+    <tabmenuitem path="/physics" title="Physics" />
+    <tabmenuitem path="/artwork" title="Artwork" />
+    <tabmenuitem path="/personal" title="Personal Stuff" />
+</tabmenu>
+
+<if self.filepath="/machine_learning/.*">
+    <then>
+        <machinelearningtabmenu />
+    </then>
+</if>
+
+<if self.filepath="/audio/.*">
+    <then>
+        <audiotabmenu />
+    </then>
+</if>
+
+<if self.filepath="/graphics/.*">
+    <then>
+        <graphicstabmenu />
+    </then>
+</if>
+
+<if self.filepath="/physics/.*">
+    <then>
+        <physicstabmenu />
+    </then>
+</if>
+
+<if self.filepath="/artwork/.*">
+    <then>
+        <artworktabmenu />
+    </then>
+</if>
+
+<if self.filepath="/personal/.*">
+    <then>
+        <personaltabmenu />
+    </then>
+</if>

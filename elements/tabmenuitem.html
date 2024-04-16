@@ -1,0 +1,14 @@
+<a href="${self.path}">
+    <if self.filepath="${self.path}.*">
+        <then>
+            <div class="tabmenuitem-active">
+                <span class="tabmenuitem-title"><self.title /></span>
+            </div>
+        </then>
+        <else>
+            <div class="tabmenuitem">
+                <span class="tabmenuitem-title"><self.title /></span>
+            </div>
+        </else>
+    </if>
+</a>
