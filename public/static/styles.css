@@ -109,7 +109,7 @@ pre {
 }
 
 .tabmenu-list {
-    border-radius: 10px 10px 0px 0px;
+    /* border-radius: 10px 10px 0px 0px; */
     overflow: hidden;
     vertical-align: baseline;
 }
