@@ -1,12 +1,14 @@
 <a href="${self.path}">
     <if self.filepath="${self.path}.*">
         <then>
-            <div class="tabmenuitem-active">
+            <!-- TODO: css math to change colour when hovering -->
+            <div class="tabmenuitem-active" style="background-color: EEEEE${self.background};">
                 <span class="tabmenuitem-title"><self.title /></span>
             </div>
         </then>
         <else>
-            <div class="tabmenuitem">
+            <div class="tabmenuitem" style="background-color: AAAAAA${self.background};">
+                <!-- TODO: css math to change colour when hovering -->
                 <span class="tabmenuitem-title"><self.title /></span>
             </div>
         </else>
