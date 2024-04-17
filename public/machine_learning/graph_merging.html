@@ -3,6 +3,43 @@
         <headthings title="Differentiable Graph Merging | Machine Learning | Tim's Portfolio" />
     </head>
     <body>
-        <maincontainer background="rgb(221, 221, 221)"> TODO </maincontainer>
+        <maincontainer background="rgb(221, 221, 221)">
+            <h1>Learning to Reduce Graphs with Differentiable Merging</h1>
+            <h2>Tim Straubinger - April 2021</h2>
+            <h3>
+                <em>CPSC 532S Course Project</em>
+            </h3>
+            <bigimage src="/static/img/ml/graph_merging_1.png" />
+            <bigimage src="/static/img/ml/graph_merging_2.png" />
+            <section>
+                <sectionheading>
+                    <h3>
+                        <em>Abstract</em>
+                    </h3>
+                </sectionheading>
+                <sectionbody>
+                    <p>
+                        Many neural network models have been proposed that operate directly on graph data structures.
+                        Existing methods are able to produce per-node feature embeddings for classification and
+                        regression and differ mainly in the methods by which they pass messages and gather features from
+                        node neighbourhoods. While learning from graph topology in this way has been explored well, the
+                        process of learning to modify graph topology in a semantically meaningful manner has received
+                        less attention. This work explores learnable reductions of graph topology by augmenting
+                        conventional graph representations and graph network models with the ability to merges together,
+                        while remaining fully-differentiable. The resulting framework is able to learn image
+                        segmentation using only merge operations, and is theoretically applicable to a large variety of
+                        problem domains where semantic reduction of graph data is desired.
+                    </p>
+                </sectionbody>
+            </section>
+            <section>
+                <sectionheading>
+                    <h3>Read the Paper</h3>
+                </sectionheading>
+                <sectionbody>
+                    <a href="/static/papers/differentiable_graph_merging.pdf"> Link to paper (.pdf - 257 KB)</a>
+                </sectionbody>
+            </section>
+        </maincontainer>
     </body>
 </html>
