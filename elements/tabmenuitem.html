@@ -2,12 +2,12 @@
     <if self.filepath="${self.path}.*">
         <then>
             <!-- TODO: css math to change colour when hovering -->
-            <div class="tabmenuitem-active" style="background-color: EEEEE${self.background};">
+            <div class="tabmenuitem-active" style="background-color: ${self.background}; filter: brightness(100%);">
                 <span class="tabmenuitem-title"><self.title /></span>
             </div>
         </then>
         <else>
-            <div class="tabmenuitem" style="background-color: AAAAAA${self.background};">
+            <div class="tabmenuitem" style="background-color: ${self.background}; filter: brightness(90%);">
                 <!-- TODO: css math to change colour when hovering -->
                 <span class="tabmenuitem-title"><self.title /></span>
             </div>
