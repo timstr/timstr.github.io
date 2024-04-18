@@ -3,6 +3,94 @@
         <headthings title="About | 3D Fractals | Tim's Portfolio" />
     </head>
     <body>
-        <maincontainer background="rgb(255, 255, 255)">TODO </maincontainer>
+        <maincontainer background="rgb(255, 255, 255)">
+            <h1>3D Fractals (old)</h1>
+            <p>More images are available in the <a href="/graphics/fractals3d/gallery.html">gallery</a></p>
+            <section>
+                <sectionheading>
+                    <h2>3D Fractals</h2>
+                    <p>
+                        Here, I implemented a CPU-based
+                        <a href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">ray-tracer</a> in C++, which
+                        simulates paths of light through space as they collide with the computed fractal geometry. For
+                        3D fractals, whose shape is complicated and chaotic, these light paths need to take lots of very
+                        small steps to avoid skipping right through parts of the fractal. These small step sizes make
+                        this kind of ray tracing computationally expensive, especially when done many times per pixel,
+                        for a million pixels, just for a single image. Multi-threading can reduce the time
+                        significantly, though the rendering time of these fractals ranged from 2 minutes to 30 minutes.
+                    </p>
+                    <p>The code for this is old and horrible and I shall not be releasing it. Sorry.</p>
+                    <p>
+                        Please see my
+                        <a href="/graphics/pathtracing.html">work on path tracing</a>
+                        for newer 3D fractals.
+                    </p>
+                </sectionheading>
+                <sectionbody>
+                    <imageicon
+                        src="/static/img/fractals/mandelbox4_small.png"
+                        dst="/static/img/fractals/mandelbox4.png"
+                    />
+                    <imageicon
+                        src="/static/img/fractals/mandelbox3_small.png"
+                        dst="/static/img/fractals/mandelbox3.png"
+                    />
+                    <imageicon
+                        src="/static/img/fractals/mandelbox1_small.png"
+                        dst="/static/img/fractals/mandelbox1.png"
+                    />
+                    <imageicon
+                        src="/static/img/fractals/mandelbox2_small.png"
+                        dst="/static/img/fractals/mandelbox2.png"
+                    />
+                    <subsection>
+                        <p>
+                            I've also used the same ray-tracing algorithm to render other things, like voxel clouds and
+                            octrees.
+                        </p>
+                        <imageicon src="/static/img/fractals/cubes1_small.png" dst="/static/img/fractals/cubes1.png" />
+                        <imageicon src="/static/img/fractals/cubes2_small.png" dst="/static/img/fractals/cubes2.png" />
+                        <imageicon src="/static/img/fractals/octree_small.png" dst="/static/img/fractals/octree.png" />
+                        <imageicon
+                            src="/static/img/fractals/voxelplanet_small.png"
+                            dst="/static/img/fractals/voxelplanet.png"
+                        />
+                    </subsection>
+                </sectionbody>
+            </section>
+
+            <section>
+                <sectionheading><h2>Animated</h2></sectionheading>
+                <sectionbody>
+                    <h4>Flying</h4>
+                    <actualsizeimage src="/static/img/fractals/flying.gif" />
+                    <h4>Negative Field-of-View</h4>
+                    <actualsizeimage src="/static/img/fractals/fovsilliness.gif" />
+                    <h4>Orbit</h4>
+                    <actualsizeimage src="/static/img/fractals/orbit.gif" />
+                </sectionbody>
+            </section>
+
+            <section>
+                <sectionheading>
+                    <h2>3D Fractals (GLSL)</h2>
+                    <p>
+                        These fractals were implemented using a similar ray tracing algorithm to that described above,
+                        though instead of running on the CPU, these ones were implemented in GLSL and ran on the GPU.
+                        The lighting is done using the Blinn-Phong shading model, for which a local estimate of curvate
+                        was computed to generate a surface normal.
+                    </p>
+                    <p>
+                        Note: while this renderer ran significantly faster than the CPU-based ray-tracer, the FPS
+                        counter in the top-left corner is rounded up. In actuality, the speed was about 5 to 10 seconds
+                        per frame at full-screen.
+                    </p>
+                </sectionheading>
+                <sectionbody>
+                    <imageicon src="/static/img/fractals/glbox1_small.png" dst="/static/img/fractals/glbox1.png" />
+                    <imageicon src="/static/img/fractals/glbox2_small.png" dst="/static/img/fractals/glbox2.png" />
+                </sectionbody>
+            </section>
+        </maincontainer>
     </body>
 </html>
