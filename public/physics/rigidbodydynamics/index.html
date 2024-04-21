@@ -3,6 +3,69 @@
         <headthings title="About | Rigid Body Dynamics | Physics | Tim's Portfolio" />
     </head>
     <body>
-        <maincontainer background="rgb(255, 255, 255)">TODO </maincontainer>
+        <maincontainer background="rgb(255, 255, 255)">
+            <bigimage src="/static/img/physics/bods.png" />
+            <section>
+                <sectionheading><h2>Overview</h2></sectionheading>
+                <sectionbody>
+                    <p>
+                        Shown above is a screen capture from my rigid body dynamics simulator,
+                        written in C++. The simulator allows arbitrary convex polygons to move and
+                        collide in 2D space.
+                    </p>
+                    <p>
+                        Collisions and joints are supported. The simulation engine relies on an
+                        iterative local solver which solves constraints such as non-penetration and
+                        fixed-distance constraints at the level of impulses. Working at the level of
+                        impulses uses only the first time derivative, and using a local solver
+                        allows for a much simpler implementation for things like inequality
+                        constraints.
+                    </p>
+                    <p>
+                        Other features include friction, immoveable solids, post-stabilization, and
+                        the ability to apply arbitrary forces and impulses, which is useful for a
+                        physics-based video game.
+                    </p>
+                    <p>
+                        Recordings of the physics engine in action are shown in the adjacent pages.
+                    </p></sectionbody
+                >
+            </section>
+            <section>
+                <sectionheading><h2>Acknowledgements</h2></sectionheading>
+                <sectionbody>
+                    <p>
+                        This engine is heavily inspired by the Sequential Impulses Method proposed
+                        by Erin Catto, author of the popular
+                        <a href="https://box2d.org/">Box2D Physics Library</a>. Erin Catto has
+                        published a number of highly informative resources at the
+                        <a href="https://box2d.org/publications/">Box2D website</a>
+                        for physics programming which I am grateful for.
+                    </p>
+                    <p>
+                        Additionally, Nilson Souto has written a
+                        <a
+                            href="https://www.toptal.com/game/video-game-physics-part-i-an-introduction-to-rigid-body-dynamics"
+                            >three-part series on physics programming and constraint solving</a
+                        >
+                        which, while working at the level of forces and focusing on the second time
+                        derivative, is very useful for thinking about constraints geometrically and
+                        mathematically.
+                    </p>
+                </sectionbody>
+            </section>
+            <section>
+                <sectionheading><h2>Source Code</h2></sectionheading>
+                <sectionbody>
+                    <p>
+                        The source code for my physics engine is available on
+                        <a href="https://github.com/timstr/A-Platformer-Game-by-Richard-and-Tim">
+                            GitHub
+                        </a>
+                        .
+                    </p>
+                </sectionbody>
+            </section>
+        </maincontainer>
     </body>
 </html>
