@@ -20,7 +20,7 @@ try {
 
     const frameIntervalMs = 100;
     const startTime = Date.now();
-    let nextDrawTime = startTime + frameIntervalMs;
+    let state = { nextDrawTime: startTime + frameIntervalMs };
 
     function anim(x, y, t, progress) {
         const snakeTailX = 10;
@@ -100,11 +100,11 @@ try {
     function redraw() {
         requestAnimationFrame(redraw);
         const time = Date.now();
-        const animTime = (nextDrawTime - startTime) * 0.001;
-        if (time < nextDrawTime) {
+        const animTime = (state.nextDrawTime - startTime) * 0.001;
+        if (time < state.nextDrawTime) {
             return;
         }
-        nextDrawTime = time + frameIntervalMs;
+        state.nextDrawTime = time + frameIntervalMs;
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
