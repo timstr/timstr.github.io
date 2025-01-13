@@ -20,7 +20,7 @@ try {
 
     const frameIntervalMs = 100;
     const startTime = Date.now();
-    let state = { nextDrawTime: startTime + frameIntervalMs };
+    var state = { nextDrawTime: startTime + frameIntervalMs };
 
     function anim(x, y, t, progress) {
         const snakeTailX = 10;
