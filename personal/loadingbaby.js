@@ -2,10 +2,12 @@ try {
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
 
-    var spanNumWeeks = document.getElementById("numweeks")
-    var spanNumDays = document.getElementById("numdays")
-    var spanNumHours = document.getElementById("numhours")
-    var spanNumMinutes = document.getElementById("numminutes")
+    var headingPercentage = document.getElementById("percentage");
+
+    var spanNumWeeks = document.getElementById("numweeks");
+    var spanNumDays = document.getElementById("numdays");
+    var spanNumHours = document.getElementById("numhours");
+    var spanNumMinutes = document.getElementById("numminutes");
 
     var spanWeeks = document.getElementById("weeks");
     var spanDays = document.getElementById("days");
@@ -122,6 +124,11 @@ try {
         const hoursRemaining = Math.floor(timeRemainingS / secondsPerHour);
         timeRemainingS -= hoursRemaining * secondsPerHour;
         const minutesRemaining = Math.floor(timeRemainingS / secondsPerMinute);
+
+        headingPercentage.innerText = `${(progress * 100).toFixed(2)} %`;
+
+        // TEST: To show date
+        // new Date(expectedDelivery - timeRemainingMs).toUTCString()
 
         spanNumWeeks.innerText = `${weeksRemaining}`
         spanNumDays.innerText = `${daysRemaining}`
