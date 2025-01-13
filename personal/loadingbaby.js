@@ -1,25 +1,23 @@
 try {
-    let canvas = document.getElementById("canvas");
-    let ctx = canvas.getContext("2d");
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
 
-    let log = document.getElementById("log");
+    var spanNumWeeks = document.getElementById("numweeks")
+    var spanNumDays = document.getElementById("numdays")
+    var spanNumHours = document.getElementById("numhours")
+    var spanNumMinutes = document.getElementById("numminutes")
 
-    let spanNumWeeks = document.getElementById("numweeks")
-    let spanNumDays = document.getElementById("numdays")
-    let spanNumHours = document.getElementById("numhours")
-    let spanNumMinutes = document.getElementById("numminutes")
+    var spanWeeks = document.getElementById("weeks");
+    var spanDays = document.getElementById("days");
+    var spanHours = document.getElementById("hours");
+    var spanMinutes = document.getElementById("minutes");
 
-    let spanWeeks = document.getElementById("weeks");
-    let spanDays = document.getElementById("days");
-    let spanHours = document.getElementById("hours");
-    let spanMinutes = document.getElementById("minutes");
+    var pixelSize = 8;
+    var numCols = canvas.width / pixelSize;
+    var numRows = canvas.height / pixelSize;
 
-    const pixelSize = 8;
-    const numCols = canvas.width / pixelSize;
-    const numRows = canvas.height / pixelSize;
-
-    const frameIntervalMs = 100;
-    const startTime = Date.now();
+    var frameIntervalMs = 100;
+    var startTime = Date.now();
     var state = { nextDrawTime: startTime + frameIntervalMs };
 
     function anim(x, y, t, progress) {
@@ -82,13 +80,13 @@ try {
         return [r, g, b, a];
     }
 
-    const orderTime = Date.UTC(2024, 7, 20, 20);
-    const expectedDelivery = Date.UTC(2025, 4, 25, 20);
+    var orderTime = Date.UTC(2024, 7, 20, 20);
+    var expectedDelivery = Date.UTC(2025, 4, 25, 20);
 
-    const secondsPerMinute = 60;
-    const secondsPerHour = secondsPerMinute * 60;
-    const secondsPerDay = secondsPerHour * 24;
-    const secondsPerWeek = secondsPerDay * 7;
+    var secondsPerMinute = 60;
+    var secondsPerHour = secondsPerMinute * 60;
+    var secondsPerDay = secondsPerHour * 24;
+    var secondsPerWeek = secondsPerDay * 7;
 
     function pluralize(s, n) {
         if (n == 1) {
