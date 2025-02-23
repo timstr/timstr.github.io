@@ -109,11 +109,11 @@ try {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         // TEST
-        // const progress = Math.min(1, Math.max(0, 0.5 + 0.6 * Math.sin(animTime * 0.2)));
-        // const timeRemainingMs = Math.max((1 - progress) * (expectedDelivery - orderTime), 0);
+        const progress = Math.min(1, Math.max(0, 0.5 + 0.6 * Math.sin(animTime * 0.2)));
+        const timeRemainingMs = Math.max((1 - progress) * (expectedDelivery - orderTime), 0);
 
-        const timeRemainingMs = Math.max(expectedDelivery - Date.now(), 0);
-        const progress = 1.0 - (timeRemainingMs / (expectedDelivery - orderTime));
+        // const timeRemainingMs = Math.max(expectedDelivery - Date.now(), 0);
+        // const progress = 1.0 - (timeRemainingMs / (expectedDelivery - orderTime));
 
         let timeRemainingS = timeRemainingMs * 0.001;
 
