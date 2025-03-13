@@ -115,6 +115,8 @@ try {
         const timeRemainingMs = Math.max(expectedDelivery - Date.now(), 0);
         const progress = 1.0 - (timeRemainingMs / (expectedDelivery - orderTime));
 
+        const animProgress = Math.min(0.1 * animTime, progress);
+
         let timeRemainingS = timeRemainingMs * 0.001;
 
         const weeksRemaining = Math.floor(timeRemainingS / secondsPerWeek);
@@ -142,7 +144,7 @@ try {
 
         for (let i = 0; i < numRows; i++) {
             for (let j = 0; j < numCols; j++) {
-                const [r, g, b, a] = anim(j, i, animTime, progress);
+                const [r, g, b, a] = anim(j, i, animTime, animProgress);
                 ctx.fillStyle = `rgba(${r * 255}, ${g * 255}, ${b * 255}, ${a})`;
                 ctx.fillRect(j * pixelSize, i * pixelSize, pixelSize, pixelSize);
             }
