@@ -113,7 +113,8 @@ pre {
     display: inline-block;
     border-radius: 10px 10px 0px 0px;
     text-align: center;
-    min-width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
     box-shadow: #00000080 0px 0px 5px;
     cursor: pointer;
 }
