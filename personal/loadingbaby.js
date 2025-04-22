@@ -22,6 +22,14 @@ try {
     var startTime = Date.now();
     var state = { nextDrawTime: startTime + frameIntervalMs };
 
+    function fract(v) {
+        return v - Math.floor(v);
+    }
+
+    function confettiSpaghetti(x, y, t) {
+        return fract(0.10512 * x + 0.5 * Math.sin(0.25 * y + 0.125 * x - 1.0 * t));
+    }
+
     function anim(x, y, t, progress) {
         const snakeTailX = 10;
         const snakeHeadX = Math.round(snakeTailX + progress * (102 - snakeTailX))
@@ -73,11 +81,25 @@ try {
         const bodyG = bodyNoTongueG + tongueMask * (tongueG - bodyNoTongueG);
         const bodyB = bodyNoTongueB + tongueMask * (tongueB - bodyNoTongueB);
 
-        const r = checkerBoard + bodyMask * (bodyR - checkerBoard);
-        const g = checkerBoard + bodyMask * (bodyG - checkerBoard);
-        const b = checkerBoard + bodyMask * (bodyB - checkerBoard);
 
-        const a = Math.min(1, bodyMask + checkerBoardMask);
+        const r1 = checkerBoard + bodyMask * (bodyR - checkerBoard);
+        const g1 = checkerBoard + bodyMask * (bodyG - checkerBoard);
+        const b1 = checkerBoard + bodyMask * (bodyB - checkerBoard);
+
+        const confettiMask = progress < 1.0 ? 0.0 : Math.min(1.0,
+            ((confettiSpaghetti(x, y, t) < 0.1 * Math.max(0.0, -0.2 + confettiSpaghetti(x * 0.5912, y * 1.7812, t))) ? 1.0 : 0.0)
+            + ((confettiSpaghetti(x * -1.272391 - 93.1, y * 1.3, t * 1.201247) < 0.3 * Math.max(0.0, -0.2 + confettiSpaghetti(x * -0.71572, y * 1.41292, t * 1.9))) ? 1.0 : 0.0)
+        );
+
+        const confettiR = 0.8 + 0.4 * checkerBoard;
+        const confettiG = 0.3 + 0.4 * checkerBoard;
+        const confettiB = 0.0;
+
+        const r = r1 + confettiMask * (confettiR - r1);
+        const g = g1 + confettiMask * (confettiG - g1);
+        const b = b1 + confettiMask * (confettiB - b1);
+
+        const a = Math.min(1, bodyMask + checkerBoardMask + confettiMask);
 
         return [r, g, b, a];
     }
