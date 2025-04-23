@@ -149,7 +149,8 @@ try {
         timeRemainingS -= hoursRemaining * secondsPerHour;
         const minutesRemaining = Math.floor(timeRemainingS / secondsPerMinute);
 
-        headingPercentage.innerText = `${(progress * 100).toFixed(2)} %`;
+        // headingPercentage.innerText = `${(progress * 100).toFixed(2)} %`;
+        headingPercentage.innerText = `${(animProgress * 100).toFixed(2)} %`;
 
         // TEST: To show date
         // new Date(expectedDelivery - timeRemainingMs).toUTCString()
