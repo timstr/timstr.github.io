@@ -105,7 +105,8 @@ try {
     }
 
     var orderTime = Date.UTC(2024, 7, 20, 20);
-    var expectedDelivery = Date.UTC(2025, 4, 25, 20);
+    // var expectedDelivery = Date.UTC(2025, 4, 25, 20);
+    var expectedDelivery = Date.UTC(2025, 4, 17, 20);
 
     var secondsPerMinute = 60;
     var secondsPerHour = secondsPerMinute * 60;
